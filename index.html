@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#07100b">
+
+<meta name="description"
+content="Ramesh Cricket Academy Mysuru — cricket coaching, skill development and practical training.">
+
+<title>Ramesh Cricket Academy | Mysuru</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050a07;
+    color:#fff;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --green:#b8ff45;
+    --dark:#050a07;
+    --card:#101b13;
+    --card2:#15251a;
+    --text:#f5f7f4;
+    --muted:#aab6ad;
+    --border:rgba(255,255,255,.10);
+}
+
+/* =========================
+   BACKGROUND EFFECT
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+      radial-gradient(
+        circle at 80% 10%,
+        rgba(184,255,69,.16),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 10% 70%,
+        rgba(0,120,50,.12),
+        transparent 35%
+      );
+
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    padding:15px 18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(5,10,7,.75);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-weight:900;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+
+    border-radius:13px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:var(--green);
+    color:#07100b;
+
+    font-size:22px;
+}
+
+.logo-text{
+    font-size:12px;
+    line-height:1.1;
+}
+
+.logo-text span{
+    color:var(--green);
+}
+
+.menu-btn{
+    border:1px solid var(--border);
+
+    background:#ffffff08;
+
+    color:white;
+
+    padding:10px 14px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:
+        150px
+        22px
+        60px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero-content{
+    width:100%;
+    max-width:900px;
+
+    margin:auto;
+}
+
+.small-title{
+    color:var(--green);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    margin-top:18px;
+
+    font-size:
+        clamp(
+            55px,
+            13vw,
+            110px
+        );
+
+    line-height:.88;
+
+    letter-spacing:-5px;
+
+    animation:
+        heroText 1s ease;
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero-description{
+    max-width:650px;
+
+    margin-top:25px;
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    animation:
+        fadeUp 1.2s ease;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.btn{
+    padding:15px 20px;
+
+    border-radius:14px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--green);
+    color:#07100b;
+
+    box-shadow:
+        0 10px 40px
+        rgba(184,255,69,.20);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-secondary{
+    background:#ffffff08;
+
+    border:1px solid var(--border);
+
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:#ffffff12;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    max-width:700px;
+}
+
+.stat{
+    padding:17px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:17px;
+
+    background:#ffffff05;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:21px;
+}
+
+.stat span{
+    display:block;
+
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:
+        80px
+        20px;
+}
+
+.container{
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.section-title{
+    font-size:35px;
+
+    margin-bottom:10px;
+}
+
+.section-subtitle{
+    color:var(--muted);
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:13px;
+}
+
+.card{
+    min-height:190px;
+
+    padding:25px;
+
+    border-radius:24px;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--card2),
+            var(--card)
+        );
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .35s,
+        border .35s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(184,255,69,.45);
+}
+
+.card::after{
+    content:"↗";
+
+    position:absolute;
+
+    right:20px;
+    top:18px;
+
+    color:var(--green);
+
+    font-size:22px;
+}
+
+.card-icon{
+    font-size:35px;
+
+    margin-bottom:25px;
+}
+
+.card h3{
+    font-size:20px;
+
+    margin-bottom:8px;
+}
+
+.card p{
+    color:var(--muted);
+
+    line-height:1.6;
+}
+
+/* FEATURE CARD */
+
+.feature{
+    grid-column:
+        span 2;
+
+    min-height:230px;
+}
+
+.feature h3{
+    font-size:42px;
+
+    letter-spacing:-2px;
+}
+
+.feature h3 span{
+    color:var(--green);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:
+        1.4fr .8fr;
+
+    gap:12px;
+}
+
+.photo{
+    min-height:200px;
+
+    border-radius:22px;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            #21482a,
+            #09130c
+        );
+
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:15px;
+
+    overflow:hidden;
+}
+
+.photo:first-child{
+    grid-row:
+        span 2;
+
+    min-height:410px;
+}
+
+.photo::before{
+    content:"🏏";
+
+    position:absolute;
+
+    font-size:100px;
+
+    opacity:.12;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+}
+
+.photo span{
+    position:relative;
+
+    background:#0009;
+
+    padding:8px 12px;
+
+    border-radius:10px;
+
+    font-size:13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:
+        60px
+        20px
+        120px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+/* =========================
+   MOBILE ACTION BAR
+========================= */
+
+.bottom-bar{
+    position:fixed;
+
+    bottom:12px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        calc(100% - 24px);
+
+    max-width:520px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:7px;
+
+    padding:7px;
+
+    background:
+        rgba(5,10,7,.90);
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:20px;
+
+    z-index:200;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.5);
+}
+
+.bottom-bar button{
+    border:none;
+
+    padding:13px 5px;
+
+    border-radius:13px;
+
+    background:#ffffff08;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.bottom-bar button:first-child{
+    background:var(--green);
+
+    color:#07100b;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,.75);
+
+    backdrop-filter:
+        blur(12px);
+
+    z-index:500;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+
+    max-width:700px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #16261a,
+            #07100b
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    animation:
+        modalIn .35s ease;
+}
+
+.close{
+    float:right;
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:#ffffff08;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.modal-box h2{
+    font-size:34px;
+
+    margin:
+        10px
+        0
+        20px;
+}
+
+.modal-box p{
+    color:var(--muted);
+
+    line-height:1.7;
+}
+
+.modal-box ul{
+    margin-top:20px;
+
+    padding-left:20px;
+
+    color:var(--muted);
+
+    line-height:2;
+}
+
+.contact-buttons{
+    margin-top:25px;
+
+    display:grid;
+
+    gap:10px;
+}
+
+.contact-buttons a{
+    padding:15px;
+
+    border-radius:14px;
+
+    background:#ffffff08;
+
+    border:
+        1px solid
+        var(--border);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes heroText{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(60px)
+            scale(.95);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes modalIn{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(50px)
+            scale(.95);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px){
+
+    .hero{
+        padding-top:140px;
+    }
+
+    .hero h1{
+        font-size:58px;
+
+        letter-spacing:-3px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .stats .stat:last-child{
+        grid-column:
+            span 2;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        grid-column:
+            span 1;
+    }
+
+    .feature h3{
+        font-size:34px;
+    }
+
+    .gallery{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .photo:first-child{
+        min-height:300px;
+    }
+
+    .photo{
+        min-height:145px;
+    }
+
+    section{
+        padding:
+            60px 18px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🏏
+        </div>
+
+        <div class="logo-text">
+
+            RAMESH
+
+            <br>
+
+            <span>
+                CRICKET ACADEMY
+            </span>
+
+        </div>
+
+    </div>
+
+    <button
+        class="menu-btn"
+        onclick="openModal('contact')">
+
+        CONTACT
+
+    </button>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            MYSURU • CRICKET ACADEMY
+        </div>
+
+        <h1>
+
+            TRAIN.<br>
+
+            <span>IMPROVE.</span><br>
+
+            COMPETE.
+
+        </h1>
+
+        <p class="hero-description">
+
+            A modern cricket training environment
+            for aspiring players. Develop your
+            skills, practice consistently and take
+            your cricket to the next level.
+
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="btn btn-primary"
+                onclick="openModal('trial')">
+
+                🏏 BOOK A TRIAL
+
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="openModal('programs')">
+
+                EXPLORE TRAINING
+
+            </button>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <strong>
+                    27+ Years
+                </strong>
+
+                <span>
+                    Business experience
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    5:30 AM
+                </strong>
+
+                <span>
+                    Opening time
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    9:30 PM
+                </strong>
+
+                <span>
+                    Closing time
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">
+        Everything for your game.
+    </h2>
+
+    <p class="section-subtitle">
+        Tap a card to explore.
+    </p>
+
+
+    <div class="cards">
+
+
+        <div
+            class="card feature"
+            onclick="openModal('about')">
+
+            <div class="card-icon">
+                🏆
+            </div>
+
+            <h3>
+                Build your
+                <span>game.</span>
+            </h3>
+
+            <p>
+                Cricket coaching, practical training
+                and skill development for aspiring
+                players.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openModal('programs')">
+
+            <div class="card-icon">
+                🎯
+            </div>
+
+            <h3>
+                Cricket Coaching
+            </h3>
+
+            <p>
+                Improve your cricket skills through
+                structured practical training.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openModal('facility')">
+
+            <div class="card-icon">
+                🏟️
+            </div>
+
+            <h3>
+                Practice Facilities
+            </h3>
+
+            <p>
+                Practice environment for players
+                looking to improve their game.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openModal('trial')">
+
+            <div class="card-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Trial Sessions
+            </h3>
+
+            <p>
+                Enquire about trial sessions and
+                available coaching batches.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openModal('gallery')">
+
+            <div class="card-icon">
+                📸
+            </div>
+
+            <h3>
+                Academy Gallery
+            </h3>
+
+            <p>
+                Show your cricket ground, nets,
+                players and training activities.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="card"
+            onclick="openModal('contact')">
+
+            <div class="card-icon">
+                📍
+            </div>
+
+            <h3>
+                Visit Academy
+            </h3>
+
+            <p>
+                Find the academy and contact
+                the team directly.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">
+        Train. Practice. Repeat.
+    </h2>
+
+    <p class="section-subtitle">
+        Replace these demo panels with the
+        academy's real photographs.
+    </p>
+
+
+    <div class="gallery">
+
+        <div class="photo">
+
+            <span>
+                Cricket Practice Ground
+            </span>
+
+        </div>
+
+
+        <div class="photo">
+
+            <span>
+                Training Nets
+            </span>
+
+        </div>
+
+
+        <div class="photo">
+
+            <span>
+                Academy Training
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY WEBSITE
+========================= -->
+
+<section>
+
+<div class="container">
+
+    <h2 class="section-title">
+        Your academy deserves a digital home.
+    </h2>
+
+    <p class="section-subtitle">
+        This section is useful when showing the
+        demo to the owner.
+    </p>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔎
+            </div>
+
+            <h3>
+                Be Discoverable
+            </h3>
+
+            <p>
+                Give parents and players one
+                professional place to learn about
+                the academy.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📲
+            </div>
+
+            <h3>
+                Get Enquiries
+            </h3>
+
+            <p>
+                Visitors can directly call or
+                WhatsApp the academy.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🖼️
+            </div>
+
+            <h3>
+                Show Facilities
+            </h3>
+
+            <p>
+                Display your ground, nets,
+                equipment, coaches and players.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🚀
+            </div>
+
+            <h3>
+                Promote Batches
+            </h3>
+
+            <p>
+                Publish age groups, timings,
+                programs, fees and announcements.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <strong>
+        Ramesh Cricket Academy
+    </strong>
+
+    <br><br>
+
+    Mysuru, Karnataka
+
+    <br><br>
+
+    © 2026 Ramesh Cricket Academy
+
+</footer>
+
+
+
+<!-- =========================
+     MOBILE BAR
+========================= -->
+
+<div class="bottom-bar">
+
+    <button
+        onclick="openModal('trial')">
+
+        🏏 Trial
+
+    </button>
+
+
+    <button
+        onclick="callAcademy()">
+
+        📞 Call
+
+    </button>
+
+
+    <button
+        onclick="openModal('contact')">
+
+        📍 Location
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+    id="modal"
+    class="modal"
+    onclick="closeOutside(event)">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModal()">
+
+            ✕
+
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================
+   ACADEMY INFORMATION
+===================================== */
+
+const phone =
+"08511338530";
+
+
+/* =====================================
+   MODAL CONTENT
+===================================== */
+
+const content = {
+
+about:`
+
+<div class="small-title">
+ABOUT THE ACADEMY
+</div>
+
+<h2>
+Ramesh Cricket Academy
+</h2>
+
+<p>
+
+Ramesh Cricket Academy is a cricket
+academy and cricket club in Mysuru,
+serving aspiring players through
+cricket training and skill development.
+
+</p>
+
+<ul>
+
+<li>
+Cricket coaching
+</li>
+
+<li>
+Skill development
+</li>
+
+<li>
+Practical cricket training
+</li>
+
+<li>
+Youth development
+</li>
+
+<li>
+Trial enquiries
+</li>
+
+</ul>
+
+`,
+
+
+programs:`
+
+<div class="small-title">
+TRAINING
+</div>
+
+<h2>
+Develop Your Game
+</h2>
+
+<p>
+
+Training information can be displayed
+here once the academy confirms its
+actual programs, age groups and batch
+timings.
+
+</p>
+
+<ul>
+
+<li>
+Cricket skill development
+</li>
+
+<li>
+Practical training
+</li>
+
+<li>
+Youth cricket development
+</li>
+
+<li>
+Trial sessions
+</li>
+
+<li>
+Batch timings
+</li>
+
+</ul>
+
+`,
+
+
+facility:`
+
+<div class="small-title">
+FACILITIES
+</div>
+
+<h2>
+Practice Environment
+</h2>
+
+<p>
+
+The academy's public photographs show
+cricket practice areas and net facilities.
+
+This section can later contain the
+academy’s actual photographs.
+
+</p>
+
+`,
+
+
+gallery:`
+
+<div class="small-title">
+GALLERY
+</div>
+
+<h2>
+Life at the Academy
+</h2>
+
+<p>
+
+Add real academy photographs here:
+
+</p>
+
+<ul>
+
+<li>
+Cricket ground
+</li>
+
+<li>
+Practice nets
+</li>
+
+<li>
+Training sessions
+</li>
+
+<li>
+Players
+</li>
+
+<li>
+Coaches
+</li>
+
+</ul>
+
+`,
+
+
+trial:`
+
+<div class="small-title">
+NEW PLAYER?
+</div>
+
+<h2>
+Book a Trial
+</h2>
+
+<p>
+
+Want to know about trial sessions,
+batch timings or coaching?
+
+Contact Ramesh Cricket Academy.
+
+</p>
+
+
+<div class="contact-buttons">
+
+<a href="tel:08511338530">
+
+📞 Call Academy
+
+</a>
+
+
+<a
+href="https://wa.me/918511338530"
+target="_blank">
+
+💬 WhatsApp Academy
+
+</a>
+
+</div>
+
+`,
+
+
+contact:`
+
+<div class="small-title">
+CONTACT
+</div>
+
+<h2>
+Visit Ramesh Cricket Academy
+</h2>
+
+<p>
+
+<strong>
+Address:
+</strong>
+
+<br>
+
+New Kantharaj Urs Road,
+Jayanagar,
+Kuvempu Nagara,
+Mysuru,
+Karnataka 570014.
+
+</p>
+
+
+<p style="margin-top:15px">
+
+<strong>
+Opening Hours:
+</strong>
+
+<br>
+
+Daily:
+5:30 AM – 9:30 PM
+
+</p>
+
+
+<div class="contact-buttons">
+
+<a href="tel:08511338530">
+
+📞 08511338530
+
+</a>
+
+
+<a
+href="https://wa.me/918511338530"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Ramesh+Cricket+Academy+Mysuru"
+target="_blank">
+
+📍 Open Google Maps
+
+</a>
+
+</div>
+
+`
+
+};
+
+
+/* =====================================
+   OPEN MODAL
+===================================== */
+
+function openModal(type){
+
+    document
+        .getElementById("modalContent")
+        .innerHTML =
+        content[type];
+
+    document
+        .getElementById("modal")
+        .classList
+        .add("active");
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+/* =====================================
+   CLOSE MODAL
+===================================== */
+
+function closeModal(){
+
+    document
+        .getElementById("modal")
+        .classList
+        .remove("active");
+
+    document.body.style.overflow =
+        "auto";
+}
+
+
+/* =====================================
+   CLOSE OUTSIDE
+===================================== */
+
+function closeOutside(event){
+
+    if(
+        event.target.id === "modal"
+    ){
+
+        closeModal();
+
+    }
+
+}
+
+
+/* =====================================
+   CALL
+===================================== */
+
+function callAcademy(){
+
+    window.location.href =
+        "tel:" + phone;
+
+}
+
+
+/* =====================================
+   ESCAPE KEY
+===================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+  </html>
