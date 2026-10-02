@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <meta name="theme-color" content="#07100b">
 
@@ -13,11 +14,12 @@ content="Ramesh Cricket Academy Mysuru — cricket coaching, skill development a
 
 <title>Ramesh Cricket Academy | Mysuru</title>
 
+
 <style>
 
-/* =========================
-   BASIC RESET
-========================= */
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -30,153 +32,349 @@ html{
 }
 
 body{
+
     background:#050a07;
-    color:#fff;
+
+    color:#ffffff;
+
     font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    Arial,
+    Helvetica,
+    sans-serif;
+
     overflow-x:hidden;
 }
 
-/* =========================
+
+/* =====================================================
    VARIABLES
-========================= */
+===================================================== */
 
 :root{
+
     --green:#b8ff45;
+
+    --green2:#79d52b;
+
     --dark:#050a07;
+
     --card:#101b13;
-    --card2:#15251a;
+
+    --card2:#16261a;
+
     --text:#f5f7f4;
+
     --muted:#aab6ad;
-    --border:rgba(255,255,255,.10);
+
+    --border:
+    rgba(255,255,255,.10);
+
 }
 
-/* =========================
-   BACKGROUND EFFECT
-========================= */
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
 
     background:
-      radial-gradient(
-        circle at 80% 10%,
-        rgba(184,255,69,.16),
+
+    radial-gradient(
+        circle at 80% 5%,
+        rgba(184,255,69,.18),
+        transparent 32%
+    ),
+
+    radial-gradient(
+        circle at 5% 60%,
+        rgba(0,130,55,.12),
         transparent 35%
-      ),
-      radial-gradient(
-        circle at 10% 70%,
-        rgba(0,120,50,.12),
-        transparent 35%
-      );
+    );
 
     pointer-events:none;
-    z-index:-1;
+
+    z-index:-3;
+
 }
 
-/* =========================
+
+/* animated glow */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    right:-200px;
+
+    top:180px;
+
+    background:
+    rgba(184,255,69,.07);
+
+    filter:blur(80px);
+
+    animation:
+    glowMove 8s ease-in-out infinite alternate;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+
+/* =====================================================
    NAVBAR
-========================= */
+===================================================== */
 
 .navbar{
+
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
 
-    padding:15px 18px;
+    padding:
+    15px 18px;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
-    background:rgba(5,10,7,.75);
-    backdrop-filter:blur(15px);
+    background:
+    rgba(5,10,7,.72);
 
-    border-bottom:1px solid var(--border);
+    backdrop-filter:
+    blur(18px);
+
+    border-bottom:
+    1px solid var(--border);
 
     z-index:100;
+
 }
 
+
+/* logo */
+
 .logo{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
 
     font-weight:900;
+
 }
+
+
+/* logo box */
 
 .logo-icon{
-    width:42px;
-    height:42px;
 
-    border-radius:13px;
+    width:44px;
+
+    height:44px;
+
+    border-radius:14px;
 
     display:flex;
-    justify-content:center;
+
     align-items:center;
 
-    background:var(--green);
+    justify-content:center;
+
+    background:
+    var(--green);
+
     color:#07100b;
 
-    font-size:22px;
+    font-size:23px;
+
+    box-shadow:
+    0 0 25px
+    rgba(184,255,69,.25);
+
+    animation:
+    logoPulse 3s infinite;
+
 }
+
 
 .logo-text{
+
     font-size:12px;
+
     line-height:1.1;
+
 }
+
 
 .logo-text span{
+
     color:var(--green);
+
 }
 
+
+/* contact */
+
 .menu-btn{
-    border:1px solid var(--border);
 
-    background:#ffffff08;
+    border:
+    1px solid
+    var(--border);
 
-    color:white;
+    background:
+    rgba(255,255,255,.03);
 
-    padding:10px 14px;
+    color:#ffffff;
+
+    padding:
+    11px 16px;
 
     border-radius:50px;
 
     cursor:pointer;
+
+    transition:.3s;
+
 }
 
-/* =========================
+
+.menu-btn:hover{
+
+    border-color:
+    var(--green);
+
+    color:
+    var(--green);
+
+}
+
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
+
     min-height:100vh;
 
     padding:
-        150px
-        22px
-        60px;
+    150px 22px 70px;
 
     display:flex;
+
     align-items:center;
 
     position:relative;
 
     overflow:hidden;
+
 }
+
+
+/* decorative circle */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    right:-160px;
+
+    top:130px;
+
+    border:
+    1px solid
+    rgba(184,255,69,.12);
+
+    box-shadow:
+    0 0 100px
+    rgba(184,255,69,.08);
+
+    animation:
+    rotateCircle 15s linear infinite;
+
+}
+
+
+/* decorative line */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    left:-100px;
+
+    bottom:100px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(184,255,69,.10);
+
+    animation:
+    float 6s ease-in-out infinite;
+
+}
+
 
 .hero-content{
+
     width:100%;
-    max-width:900px;
+
+    max-width:950px;
 
     margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
 }
 
+
+/* small heading */
+
 .small-title{
+
     color:var(--green);
 
     font-size:12px;
@@ -187,35 +385,55 @@ body::before{
 
     text-transform:uppercase;
 
-    animation:fadeUp 1s ease;
+    animation:
+    fadeUp .8s ease both;
+
 }
 
+
+/* main heading */
+
 .hero h1{
+
     margin-top:18px;
 
     font-size:
-        clamp(
-            55px,
-            13vw,
-            110px
-        );
+    clamp(
+        55px,
+        13vw,
+        110px
+    );
 
     line-height:.88;
 
     letter-spacing:-5px;
 
     animation:
-        heroText 1s ease;
+    heroText 1s
+    cubic-bezier(.2,.8,.2,1)
+    both;
+
 }
+
 
 .hero h1 span{
+
     color:var(--green);
+
+    text-shadow:
+    0 0 35px
+    rgba(184,255,69,.18);
+
 }
 
+
+/* description */
+
 .hero-description{
+
     max-width:650px;
 
-    margin-top:25px;
+    margin-top:28px;
 
     color:var(--muted);
 
@@ -224,14 +442,18 @@ body::before{
     line-height:1.7;
 
     animation:
-        fadeUp 1.2s ease;
+    fadeUp 1s .25s
+    ease both;
+
 }
 
-/* =========================
+
+/* =====================================================
    BUTTONS
-========================= */
+===================================================== */
 
 .buttons{
+
     display:flex;
 
     gap:12px;
@@ -239,10 +461,18 @@ body::before{
     flex-wrap:wrap;
 
     margin-top:30px;
+
+    animation:
+    fadeUp 1s .4s
+    ease both;
+
 }
 
+
 .btn{
-    padding:15px 20px;
+
+    padding:
+    15px 20px;
 
     border-radius:14px;
 
@@ -252,70 +482,131 @@ body::before{
 
     font-weight:800;
 
-    transition:.3s;
+    transition:
+    transform .3s,
+    box-shadow .3s;
+
 }
 
+
 .btn-primary{
-    background:var(--green);
+
+    background:
+    var(--green);
+
     color:#07100b;
 
     box-shadow:
-        0 10px 40px
-        rgba(184,255,69,.20);
+    0 10px 40px
+    rgba(184,255,69,.20);
+
 }
+
 
 .btn-primary:hover{
-    transform:translateY(-4px);
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 15px 50px
+    rgba(184,255,69,.35);
+
 }
+
 
 .btn-secondary{
-    background:#ffffff08;
 
-    border:1px solid var(--border);
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid
+    var(--border);
 
     color:white;
+
 }
+
 
 .btn-secondary:hover{
-    background:#ffffff12;
+
+    transform:
+    translateY(-5px);
+
+    border-color:
+    rgba(184,255,69,.45);
+
 }
 
-/* =========================
+
+/* =====================================================
    STATS
-========================= */
+===================================================== */
 
 .stats{
+
     margin-top:40px;
 
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+    repeat(3,1fr);
 
     gap:10px;
 
     max-width:700px;
+
+    animation:
+    fadeUp 1s .55s
+    ease both;
+
 }
 
+
 .stat{
+
     padding:17px;
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    var(--border);
 
     border-radius:17px;
 
-    background:#ffffff05;
+    background:
+    rgba(255,255,255,.025);
+
+    backdrop-filter:
+    blur(10px);
+
+    transition:.3s;
+
 }
 
+
+.stat:hover{
+
+    transform:
+    translateY(-5px);
+
+    border-color:
+    rgba(184,255,69,.3);
+
+}
+
+
 .stat strong{
+
     display:block;
 
     font-size:21px;
+
 }
 
+
 .stat span{
+
     display:block;
 
     margin-top:5px;
@@ -323,50 +614,69 @@ body::before{
     color:var(--muted);
 
     font-size:12px;
+
 }
 
-/* =========================
+
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
 section{
+
     padding:
-        80px
-        20px;
+    90px 20px;
+
 }
 
+
 .container{
+
     max-width:1000px;
 
     margin:auto;
+
 }
 
+
 .section-title{
+
     font-size:35px;
 
     margin-bottom:10px;
+
+    letter-spacing:-1px;
+
 }
 
+
 .section-subtitle{
+
     color:var(--muted);
 
     margin-bottom:30px;
+
 }
 
-/* =========================
+
+/* =====================================================
    CARDS
-========================= */
+===================================================== */
 
 .cards{
+
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:13px;
+
 }
 
+
 .card{
+
     min-height:190px;
 
     padding:25px;
@@ -374,15 +684,15 @@ section{
     border-radius:24px;
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    var(--border);
 
     background:
-        linear-gradient(
-            145deg,
-            var(--card2),
-            var(--card)
-        );
+    linear-gradient(
+        145deg,
+        rgba(22,38,26,.96),
+        rgba(10,18,12,.96)
+    );
 
     cursor:pointer;
 
@@ -391,95 +701,211 @@ section{
     overflow:hidden;
 
     transition:
-        transform .35s,
-        border .35s;
+    transform .4s
+    cubic-bezier(.2,.8,.2,1),
+    border .3s,
+    box-shadow .3s;
+
+    opacity:0;
+
+    transform:
+    translateY(35px);
+
 }
+
+
+/* animated card line */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:2px;
+
+    left:-130px;
+
+    top:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--green),
+        transparent
+    );
+
+    transition:
+    left .7s ease;
+
+}
+
+
+.card:hover::before{
+
+    left:100%;
+
+}
+
 
 .card:hover{
-    transform:translateY(-7px);
+
+    transform:
+    translateY(-8px);
 
     border-color:
-        rgba(184,255,69,.45);
+    rgba(184,255,69,.35);
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.25);
+
 }
 
+
+.card.show{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+
+/* arrow */
+
 .card::after{
+
     content:"↗";
 
     position:absolute;
 
     right:20px;
+
     top:18px;
 
     color:var(--green);
 
     font-size:22px;
+
+    transition:.3s;
+
 }
 
+
+.card:hover::after{
+
+    transform:
+    translate(4px,-4px);
+
+}
+
+
+/* icon */
+
 .card-icon{
+
     font-size:35px;
 
     margin-bottom:25px;
+
+    transition:
+    transform .4s;
+
 }
 
+
+.card:hover .card-icon{
+
+    transform:
+    scale(1.15)
+    rotate(-4deg);
+
+}
+
+
 .card h3{
+
     font-size:20px;
 
     margin-bottom:8px;
+
 }
 
+
 .card p{
+
     color:var(--muted);
 
     line-height:1.6;
+
 }
 
-/* FEATURE CARD */
+
+/* feature */
 
 .feature{
+
     grid-column:
-        span 2;
+    span 2;
 
     min-height:230px;
+
 }
 
+
 .feature h3{
+
     font-size:42px;
 
     letter-spacing:-2px;
+
 }
+
 
 .feature h3 span{
+
     color:var(--green);
+
 }
 
-/* =========================
+
+/* =====================================================
    GALLERY
-========================= */
+===================================================== */
 
 .gallery{
+
     display:grid;
 
     grid-template-columns:
-        1.4fr .8fr;
+    1.4fr .8fr;
 
     gap:12px;
+
 }
 
+
 .photo{
+
     min-height:200px;
 
     border-radius:22px;
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    var(--border);
 
     background:
-        linear-gradient(
-            145deg,
-            #21482a,
-            #09130c
-        );
+    linear-gradient(
+        145deg,
+        #21482a,
+        #09130c
+    );
 
     position:relative;
 
@@ -490,16 +916,35 @@ section{
     padding:15px;
 
     overflow:hidden;
+
+    transition:.4s;
+
 }
+
+
+.photo:hover{
+
+    transform:
+    scale(1.02);
+
+    border-color:
+    rgba(184,255,69,.35);
+
+}
+
 
 .photo:first-child{
+
     grid-row:
-        span 2;
+    span 2;
 
     min-height:410px;
+
 }
 
+
 .photo::before{
+
     content:"🏏";
 
     position:absolute;
@@ -509,46 +954,46 @@ section{
     opacity:.12;
 
     left:50%;
+
     top:50%;
 
     transform:
-        translate(-50%,-50%);
+    translate(-50%,-50%);
+
+    animation:
+    float 5s ease-in-out infinite;
+
 }
 
+
 .photo span{
+
     position:relative;
 
-    background:#0009;
+    z-index:2;
 
-    padding:8px 12px;
+    background:
+    rgba(0,0,0,.55);
+
+    padding:
+    8px 12px;
 
     border-radius:10px;
 
     font-size:13px;
+
+    backdrop-filter:
+    blur(5px);
+
 }
 
-/* =========================
-   FOOTER
-========================= */
 
-footer{
-    padding:
-        60px
-        20px
-        120px;
-
-    text-align:center;
-
-    color:var(--muted);
-
-    font-size:13px;
-}
-
-/* =========================
+/* =====================================================
    MOBILE ACTION BAR
-========================= */
+===================================================== */
 
 .bottom-bar{
+
     position:fixed;
 
     bottom:12px;
@@ -556,77 +1001,103 @@ footer{
     left:50%;
 
     transform:
-        translateX(-50%);
+    translateX(-50%);
 
     width:
-        calc(100% - 24px);
+    calc(100% - 24px);
 
     max-width:520px;
 
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+    repeat(3,1fr);
 
     gap:7px;
 
     padding:7px;
 
     background:
-        rgba(5,10,7,.90);
+    rgba(5,10,7,.90);
 
     backdrop-filter:
-        blur(20px);
+    blur(20px);
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    var(--border);
 
     border-radius:20px;
 
     z-index:200;
 
     box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.5);
+    0 20px 50px
+    rgba(0,0,0,.5);
+
 }
 
+
 .bottom-bar button{
+
     border:none;
 
-    padding:13px 5px;
+    padding:
+    13px 5px;
 
     border-radius:13px;
 
-    background:#ffffff08;
+    background:
+    rgba(255,255,255,.035);
 
     color:white;
 
     font-weight:bold;
 
     cursor:pointer;
+
+    transition:.3s;
+
 }
+
+
+.bottom-bar button:hover{
+
+    transform:
+    translateY(-3px);
+
+}
+
 
 .bottom-bar button:first-child{
-    background:var(--green);
+
+    background:
+    var(--green);
 
     color:#07100b;
+
+    box-shadow:
+    0 0 25px
+    rgba(184,255,69,.15);
+
 }
 
-/* =========================
+
+/* =====================================================
    MODAL
-========================= */
+===================================================== */
 
 .modal{
+
     position:fixed;
 
     inset:0;
 
     background:
-        rgba(0,0,0,.75);
+    rgba(0,0,0,.78);
 
     backdrop-filter:
-        blur(12px);
+    blur(14px);
 
     z-index:500;
 
@@ -637,13 +1108,19 @@ footer{
     justify-content:center;
 
     padding:15px;
+
 }
+
 
 .modal.active{
+
     display:flex;
+
 }
 
+
 .modal-box{
+
     width:100%;
 
     max-width:700px;
@@ -657,55 +1134,87 @@ footer{
     border-radius:28px;
 
     background:
-        linear-gradient(
-            145deg,
-            #16261a,
-            #07100b
-        );
+    linear-gradient(
+        145deg,
+        #16261a,
+        #07100b
+    );
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    rgba(184,255,69,.18);
+
+    box-shadow:
+    0 30px 100px
+    rgba(0,0,0,.55);
 
     animation:
-        modalIn .35s ease;
+    modalIn .4s
+    cubic-bezier(.2,.8,.2,1);
+
 }
 
+
 .close{
+
     float:right;
 
     width:40px;
+
     height:40px;
 
     border-radius:50%;
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    var(--border);
 
-    background:#ffffff08;
+    background:
+    rgba(255,255,255,.04);
 
     color:white;
 
     cursor:pointer;
+
+    transition:.3s;
+
 }
 
+
+.close:hover{
+
+    background:
+    var(--green);
+
+    color:#07100b;
+
+    transform:
+    rotate(90deg);
+
+}
+
+
 .modal-box h2{
+
     font-size:34px;
 
     margin:
-        10px
-        0
-        20px;
+    10px 0 20px;
+
 }
 
+
 .modal-box p{
+
     color:var(--muted);
 
     line-height:1.7;
+
 }
 
+
 .modal-box ul{
+
     margin-top:20px;
 
     padding-left:20px;
@@ -713,167 +1222,372 @@ footer{
     color:var(--muted);
 
     line-height:2;
+
 }
 
+
 .contact-buttons{
+
     margin-top:25px;
 
     display:grid;
 
     gap:10px;
+
 }
 
+
 .contact-buttons a{
+
     padding:15px;
 
     border-radius:14px;
 
-    background:#ffffff08;
+    background:
+    rgba(255,255,255,.04);
 
     border:
-        1px solid
-        var(--border);
+    1px solid
+    var(--border);
 
     color:white;
 
     text-decoration:none;
 
     font-weight:bold;
+
+    transition:.3s;
+
 }
 
-/* =========================
+
+.contact-buttons a:hover{
+
+    border-color:
+    var(--green);
+
+    transform:
+    translateX(5px);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:
+    60px 20px 120px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+
+footer strong{
+
+    color:#ffffff;
+
+}
+
+
+/* =====================================================
    ANIMATIONS
-========================= */
+===================================================== */
 
 @keyframes fadeUp{
 
     from{
+
         opacity:0;
 
         transform:
-            translateY(30px);
+        translateY(30px);
+
     }
 
     to{
+
         opacity:1;
 
         transform:
-            translateY(0);
+        translateY(0);
+
     }
+
 }
+
 
 @keyframes heroText{
 
     from{
+
         opacity:0;
 
         transform:
-            translateY(60px)
-            scale(.95);
+        translateY(60px)
+        scale(.94);
+
     }
 
     to{
+
         opacity:1;
 
         transform:
-            translateY(0)
-            scale(1);
+        translateY(0)
+        scale(1);
+
     }
+
 }
+
 
 @keyframes modalIn{
 
     from{
+
         opacity:0;
 
         transform:
-            translateY(50px)
-            scale(.95);
+        translateY(50px)
+        scale(.94);
+
     }
 
     to{
+
         opacity:1;
 
         transform:
-            translateY(0)
-            scale(1);
+        translateY(0)
+        scale(1);
+
     }
+
 }
 
-/* =========================
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-15px);
+
+    }
+
+}
+
+
+@keyframes glowMove{
+
+    from{
+
+        transform:
+        translate(0,0);
+
+    }
+
+    to{
+
+        transform:
+        translate(-120px,100px);
+
+    }
+
+}
+
+
+@keyframes rotateCircle{
+
+    from{
+
+        transform:
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes logoPulse{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 20px
+        rgba(184,255,69,.18);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 35px
+        rgba(184,255,69,.38);
+
+    }
+
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:650px){
 
     .hero{
-        padding-top:140px;
+
+        padding-top:
+        140px;
+
     }
+
 
     .hero h1{
-        font-size:58px;
 
-        letter-spacing:-3px;
+        font-size:
+        58px;
+
+        letter-spacing:
+        -3px;
+
     }
+
 
     .hero-description{
-        font-size:16px;
+
+        font-size:
+        16px;
+
     }
+
 
     .stats{
+
         grid-template-columns:
-            repeat(2,1fr);
+        repeat(2,1fr);
+
     }
+
 
     .stats .stat:last-child{
+
         grid-column:
-            span 2;
+        span 2;
+
     }
+
 
     .cards{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+        1fr;
+
     }
+
 
     .feature{
+
         grid-column:
-            span 1;
+        span 1;
+
     }
+
 
     .feature h3{
-        font-size:34px;
+
+        font-size:
+        34px;
+
     }
+
 
     .gallery{
+
         grid-template-columns:
-            1fr 1fr;
+        1fr 1fr;
+
     }
+
 
     .photo:first-child{
-        min-height:300px;
+
+        min-height:
+        300px;
+
     }
+
 
     .photo{
-        min-height:145px;
+
+        min-height:
+        145px;
+
     }
+
 
     section{
+
         padding:
-            60px 18px;
+        65px 18px;
+
     }
 
+
     .section-title{
-        font-size:30px;
+
+        font-size:
+        30px;
+
     }
+
+
+    .modal-box{
+
+        padding:
+        24px;
+
+        border-radius:
+        25px;
+
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =====================================================
      NAVIGATION
-========================= -->
+===================================================== -->
 
 <header class="navbar">
 
@@ -897,9 +1611,10 @@ footer{
 
     </div>
 
+
     <button
-        class="menu-btn"
-        onclick="openModal('contact')">
+    class="menu-btn"
+    onclick="openModal('contact')">
 
         CONTACT
 
@@ -908,120 +1623,137 @@ footer{
 </header>
 
 
-<!-- =========================
+
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero">
 
-    <div class="hero-content">
-
-        <div class="small-title">
-            MYSURU • CRICKET ACADEMY
-        </div>
-
-        <h1>
-
-            TRAIN.<br>
-
-            <span>IMPROVE.</span><br>
-
-            COMPETE.
-
-        </h1>
-
-        <p class="hero-description">
-
-            A modern cricket training environment
-            for aspiring players. Develop your
-            skills, practice consistently and take
-            your cricket to the next level.
-
-        </p>
-
-        <div class="buttons">
-
-            <button
-                class="btn btn-primary"
-                onclick="openModal('trial')">
-
-                🏏 BOOK A TRIAL
-
-            </button>
-
-            <button
-                class="btn btn-secondary"
-                onclick="openModal('programs')">
-
-                EXPLORE TRAINING
-
-            </button>
-
-        </div>
+<div class="hero-content">
 
 
-        <div class="stats">
+    <div class="small-title">
 
-            <div class="stat">
-
-                <strong>
-                    27+ Years
-                </strong>
-
-                <span>
-                    Business experience
-                </span>
-
-            </div>
-
-
-            <div class="stat">
-
-                <strong>
-                    5:30 AM
-                </strong>
-
-                <span>
-                    Opening time
-                </span>
-
-            </div>
-
-
-            <div class="stat">
-
-                <strong>
-                    9:30 PM
-                </strong>
-
-                <span>
-                    Closing time
-                </span>
-
-            </div>
-
-        </div>
+        MYSURU • CRICKET ACADEMY
 
     </div>
+
+
+    <h1>
+
+        TRAIN.<br>
+
+        <span>IMPROVE.</span><br>
+
+        COMPETE.
+
+    </h1>
+
+
+    <p class="hero-description">
+
+        A dedicated cricket training environment
+        for aspiring players. Develop your skills,
+        practice consistently and take your cricket
+        to the next level.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <button
+        class="btn btn-primary"
+        onclick="openModal('trial')">
+
+            🏏 BOOK A TRIAL
+
+        </button>
+
+
+        <button
+        class="btn btn-secondary"
+        onclick="openModal('programs')">
+
+            EXPLORE TRAINING
+
+        </button>
+
+    </div>
+
+
+    <div class="stats">
+
+
+        <div class="stat">
+
+            <strong>
+                Cricket
+            </strong>
+
+            <span>
+                Coaching
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                Daily
+            </strong>
+
+            <span>
+                Training
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                Mysuru
+            </strong>
+
+            <span>
+                Karnataka
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</div>
 
 </section>
 
 
 
-<!-- =========================
+<!-- =====================================================
      SERVICES
-========================= -->
+===================================================== -->
 
 <section>
 
 <div class="container">
 
+
     <h2 class="section-title">
+
         Everything for your game.
+
     </h2>
 
+
     <p class="section-subtitle">
-        Tap a card to explore.
+
+        Training, practice and player development.
+
     </p>
 
 
@@ -1029,128 +1761,188 @@ footer{
 
 
         <div
-            class="card feature"
-            onclick="openModal('about')">
+        class="card feature"
+        onclick="openModal('about')">
+
 
             <div class="card-icon">
+
                 🏆
+
             </div>
 
+
             <h3>
+
                 Build your
                 <span>game.</span>
+
             </h3>
 
+
             <p>
+
                 Cricket coaching, practical training
                 and skill development for aspiring
                 players.
+
             </p>
+
 
         </div>
 
 
 
         <div
-            class="card"
-            onclick="openModal('programs')">
+        class="card"
+        onclick="openModal('programs')">
+
 
             <div class="card-icon">
+
                 🎯
+
             </div>
 
+
             <h3>
+
                 Cricket Coaching
+
             </h3>
 
+
             <p>
+
                 Improve your cricket skills through
                 structured practical training.
+
             </p>
+
 
         </div>
 
 
 
         <div
-            class="card"
-            onclick="openModal('facility')">
+        class="card"
+        onclick="openModal('facility')">
+
 
             <div class="card-icon">
+
                 🏟️
+
             </div>
 
+
             <h3>
+
                 Practice Facilities
+
             </h3>
 
+
             <p>
+
                 Practice environment for players
                 looking to improve their game.
+
             </p>
+
 
         </div>
 
 
 
         <div
-            class="card"
-            onclick="openModal('trial')">
+        class="card"
+        onclick="openModal('trial')">
+
 
             <div class="card-icon">
+
                 ⚡
+
             </div>
 
+
             <h3>
+
                 Trial Sessions
+
             </h3>
 
+
             <p>
+
                 Enquire about trial sessions and
                 available coaching batches.
+
             </p>
+
 
         </div>
 
 
 
         <div
-            class="card"
-            onclick="openModal('gallery')">
+        class="card"
+        onclick="openModal('gallery')">
+
 
             <div class="card-icon">
+
                 📸
+
             </div>
 
+
             <h3>
+
                 Academy Gallery
+
             </h3>
 
+
             <p>
-                Show your cricket ground, nets,
-                players and training activities.
+
+                Explore the cricket ground,
+                training and academy activities.
+
             </p>
+
 
         </div>
 
 
 
         <div
-            class="card"
-            onclick="openModal('contact')">
+        class="card"
+        onclick="openModal('contact')">
+
 
             <div class="card-icon">
+
                 📍
+
             </div>
 
+
             <h3>
+
                 Visit Academy
+
             </h3>
 
+
             <p>
+
                 Find the academy and contact
                 the team directly.
+
             </p>
+
 
         </div>
 
@@ -1163,25 +1955,32 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      GALLERY
-========================= -->
+===================================================== -->
 
 <section>
 
 <div class="container">
 
+
     <h2 class="section-title">
+
         Train. Practice. Repeat.
+
     </h2>
 
+
     <p class="section-subtitle">
-        Replace these demo panels with the
-        academy's real photographs.
+
+        Explore the academy and its cricket
+        training environment.
+
     </p>
 
 
     <div class="gallery">
+
 
         <div class="photo">
 
@@ -1209,6 +2008,7 @@ footer{
 
         </div>
 
+
     </div>
 
 </div>
@@ -1217,22 +2017,21 @@ footer{
 
 
 
-<!-- =========================
-     WHY WEBSITE
-========================= -->
+<!-- =====================================================
+     ACADEMY EXPERIENCE
+===================================================== -->
 
 <section>
 
 <div class="container">
 
-    <h2 class="section-title">
-        Your academy deserves a digital home.
-    </h2>
 
-    <p class="section-subtitle">
-        This section is useful when showing the
-        demo to the owner.
-    </p>
+    <h2 class="section-title">
+
+        Your academy deserves
+        a digital home.
+
+    </h2>
 
 
     <div class="cards">
@@ -1240,73 +2039,108 @@ footer{
 
         <div class="card">
 
+
             <div class="card-icon">
                 🔎
             </div>
 
+
             <h3>
+
                 Be Discoverable
+
             </h3>
 
+
             <p>
+
                 Give parents and players one
                 professional place to learn about
                 the academy.
+
             </p>
+
 
         </div>
 
 
+
         <div class="card">
+
 
             <div class="card-icon">
                 📲
             </div>
 
+
             <h3>
+
                 Get Enquiries
+
             </h3>
 
+
             <p>
+
                 Visitors can directly call or
                 WhatsApp the academy.
+
             </p>
+
 
         </div>
 
 
+
         <div class="card">
+
 
             <div class="card-icon">
                 🖼️
             </div>
 
+
             <h3>
+
                 Show Facilities
+
             </h3>
 
+
             <p>
+
                 Display your ground, nets,
                 equipment, coaches and players.
+
             </p>
+
 
         </div>
 
 
+
         <div class="card">
+
 
             <div class="card-icon">
                 🚀
             </div>
 
+
             <h3>
+
                 Promote Batches
+
             </h3>
 
+
             <p>
+
                 Publish age groups, timings,
-                programs, fees and announcements.
+                programs and announcements.
+
             </p>
+
 
         </div>
 
@@ -1319,9 +2153,9 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -1335,20 +2169,21 @@ footer{
 
     <br><br>
 
-    © 2026 Ramesh Cricket Academy
+    Train • Improve • Compete
 
 </footer>
 
 
 
-<!-- =========================
-     MOBILE BAR
-========================= -->
+<!-- =====================================================
+     MOBILE ACTION BAR
+===================================================== -->
 
 <div class="bottom-bar">
 
+
     <button
-        onclick="openModal('trial')">
+    onclick="openModal('trial')">
 
         🏏 Trial
 
@@ -1356,7 +2191,7 @@ footer{
 
 
     <button
-        onclick="callAcademy()">
+    onclick="callAcademy()">
 
         📞 Call
 
@@ -1364,38 +2199,43 @@ footer{
 
 
     <button
-        onclick="openModal('contact')">
+    onclick="openModal('contact')">
 
         📍 Location
 
     </button>
 
+
 </div>
 
 
 
-<!-- =========================
+<!-- =====================================================
      MODAL
-========================= -->
+===================================================== -->
 
 <div
-    id="modal"
-    class="modal"
-    onclick="closeOutside(event)">
+id="modal"
+class="modal"
+onclick="closeOutside(event)">
 
-    <div class="modal-box">
 
-        <button
-            class="close"
-            onclick="closeModal()">
+<div class="modal-box">
 
-            ✕
 
-        </button>
+    <button
+    class="close"
+    onclick="closeModal()">
 
-        <div id="modalContent"></div>
+        ✕
 
-    </div>
+    </button>
+
+
+    <div id="modalContent"></div>
+
+
+</div>
 
 </div>
 
@@ -1403,19 +2243,20 @@ footer{
 
 <script>
 
-/* =====================================
-   ACADEMY INFORMATION
-===================================== */
+/* =====================================================
+   ACADEMY CONTACT
+===================================================== */
 
 const phone =
 "08511338530";
 
 
-/* =====================================
+/* =====================================================
    MODAL CONTENT
-===================================== */
+===================================================== */
 
 const content = {
+
 
 about:`
 
@@ -1463,6 +2304,7 @@ Trial enquiries
 `,
 
 
+
 programs:`
 
 <div class="small-title">
@@ -1475,10 +2317,8 @@ Develop Your Game
 
 <p>
 
-Training information can be displayed
-here once the academy confirms its
-actual programs, age groups and batch
-timings.
+Improve your cricket skills through
+focused practice and practical training.
 
 </p>
 
@@ -1501,12 +2341,13 @@ Trial sessions
 </li>
 
 <li>
-Batch timings
+Coaching enquiries
 </li>
 
 </ul>
 
 `,
+
 
 
 facility:`
@@ -1521,15 +2362,30 @@ Practice Environment
 
 <p>
 
-The academy's public photographs show
-cricket practice areas and net facilities.
-
-This section can later contain the
-academy’s actual photographs.
+The academy provides a cricket practice
+environment where players can work on
+their skills and improve their game.
 
 </p>
 
+<ul>
+
+<li>
+Cricket practice area
+</li>
+
+<li>
+Practice nets
+</li>
+
+<li>
+Training environment
+</li>
+
+</ul>
+
 `,
+
 
 
 gallery:`
@@ -1544,7 +2400,8 @@ Life at the Academy
 
 <p>
 
-Add real academy photographs here:
+Explore the cricket ground, practice
+sessions and academy activities.
 
 </p>
 
@@ -1567,12 +2424,13 @@ Players
 </li>
 
 <li>
-Coaches
+Academy activities
 </li>
 
 </ul>
 
 `,
+
 
 
 trial:`
@@ -1597,6 +2455,7 @@ Contact Ramesh Cricket Academy.
 
 <div class="contact-buttons">
 
+
 <a href="tel:08511338530">
 
 📞 Call Academy
@@ -1612,9 +2471,11 @@ target="_blank">
 
 </a>
 
+
 </div>
 
 `,
+
 
 
 contact:`
@@ -1626,6 +2487,7 @@ CONTACT
 <h2>
 Visit Ramesh Cricket Academy
 </h2>
+
 
 <p>
 
@@ -1660,6 +2522,7 @@ Daily:
 
 <div class="contact-buttons">
 
+
 <a href="tel:08511338530">
 
 📞 08511338530
@@ -1684,6 +2547,7 @@ target="_blank">
 
 </a>
 
+
 </div>
 
 `
@@ -1691,46 +2555,51 @@ target="_blank">
 };
 
 
-/* =====================================
+/* =====================================================
    OPEN MODAL
-===================================== */
+===================================================== */
 
 function openModal(type){
 
     document
-        .getElementById("modalContent")
-        .innerHTML =
-        content[type];
+    .getElementById("modalContent")
+    .innerHTML =
+    content[type];
+
 
     document
-        .getElementById("modal")
-        .classList
-        .add("active");
+    .getElementById("modal")
+    .classList
+    .add("active");
+
 
     document.body.style.overflow =
-        "hidden";
+    "hidden";
+
 }
 
 
-/* =====================================
+/* =====================================================
    CLOSE MODAL
-===================================== */
+===================================================== */
 
 function closeModal(){
 
     document
-        .getElementById("modal")
-        .classList
-        .remove("active");
+    .getElementById("modal")
+    .classList
+    .remove("active");
+
 
     document.body.style.overflow =
-        "auto";
+    "auto";
+
 }
 
 
-/* =====================================
+/* =====================================================
    CLOSE OUTSIDE
-===================================== */
+===================================================== */
 
 function closeOutside(event){
 
@@ -1745,38 +2614,89 @@ function closeOutside(event){
 }
 
 
-/* =====================================
+/* =====================================================
    CALL
-===================================== */
+===================================================== */
 
 function callAcademy(){
 
     window.location.href =
-        "tel:" + phone;
+    "tel:" + phone;
 
 }
 
 
-/* =====================================
-   ESCAPE KEY
-===================================== */
+/* =====================================================
+   ESCAPE
+===================================================== */
 
 document.addEventListener(
-    "keydown",
-    function(event){
+"keydown",
+function(event){
 
-        if(
-            event.key === "Escape"
-        ){
+    if(
+        event.key === "Escape"
+    ){
 
-            closeModal();
-
-        }
+        closeModal();
 
     }
+
+});
+
+
+/* =====================================================
+   SCROLL CARD ANIMATION
+===================================================== */
+
+const cards =
+document.querySelectorAll(".card");
+
+
+const observer =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(
+        entry => {
+
+            if(
+                entry.isIntersecting
+            ){
+
+                entry.target
+                .classList
+                .add("show");
+
+                observer
+                .unobserve(
+                    entry.target
+                );
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
 );
+
+
+cards.forEach(
+card => {
+
+    observer.observe(card);
+
+});
+
 
 </script>
 
+
 </body>
-  </html>
+</html>
