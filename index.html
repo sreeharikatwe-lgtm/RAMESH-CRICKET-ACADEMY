@@ -1,2702 +1,2123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050906">
+<title>Ramesh Cricket Academy | Train. Improve. Compete.</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color" content="#07100b">
-
-<meta name="description"
-content="Ramesh Cricket Academy Mysuru — cricket coaching, skill development and practical training.">
-
-<title>Ramesh Cricket Academy | Mysuru</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+  --bg: #050906;
+  --panel: #0c140e;
+  --lime: #b8ff45;
+  --white: #f4f8f1;
+  --muted: #9ba99b;
+  --line: rgba(184,255,69,.2);
 }
 
-html{
-    scroll-behavior:smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-
-    background:#050a07;
-
-    color:#ffffff;
-
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    overflow-x:hidden;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
 
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-:root{
-
-    --green:#b8ff45;
-
-    --green2:#79d52b;
-
-    --dark:#050a07;
-
-    --card:#101b13;
-
-    --card2:#16261a;
-
-    --text:#f5f7f4;
-
-    --muted:#aab6ad;
-
-    --border:
-    rgba(255,255,255,.10);
-
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 85% 5%, #b8ff4510, transparent 25%),
+    radial-gradient(circle at 5% 50%, #38a83c0c, transparent 30%);
+}
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-body::before{
+button, input, textarea, select {
+  font: inherit;
+}
 
-    content:"";
+button {
+  cursor: pointer;
+}
 
-    position:fixed;
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
 
-    inset:0;
+.section {
+  padding: 95px 0;
+}
 
+.eyebrow {
+  display: inline-block;
+  color: var(--lime);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font: 800 clamp(2.8rem, 6vw, 4.7rem)/.95 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+
+.section-title span {
+  color: var(--lime);
+}
+
+.section-description {
+  max-width: 650px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: .9rem;
+}
+
+.section-heading {
+  margin-bottom: 38px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 21px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  font-size: .8rem;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: var(--lime);
+  color: #071006;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #b8ff4535;
+}
+
+.btn-outline {
+  background: #ffffff06;
+  border-color: #ffffff30;
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+  transform: translateY(-3px);
+}
+
+/* NAVIGATION */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: .3s;
+}
+
+header.scrolled {
+  background: #050906ed;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--lime);
+  color: #071006;
+  font-size: 1.5rem;
+  box-shadow: 0 0 25px #b8ff4530;
+}
+
+.brand-name {
+  font: 800 1.12rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+.brand-name small {
+  display: block;
+  color: var(--lime);
+  font: 700 .57rem 'Manrope', sans-serif;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: #c8d2c6;
+  font-size: .76rem;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.nav-links a:hover {
+  color: var(--lime);
+}
+
+.menu-toggle {
+  display: none;
+  width: 43px;
+  height: 43px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: white;
+  border-radius: 12px;
+  font-size: 1.3rem;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 750px;
+  padding: 140px 0 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, #030704f5 0%, #030704d9 42%, #03070435 100%),
+    linear-gradient(0deg, var(--bg), transparent 30%),
+    url('https://images.unsplash.com/photo-1593766827228-8737b9cd6cc1?auto=format&fit=crop&w=1900&q=90')
+    center / cover;
+}
+
+.hero-content {
+  max-width: 780px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid #b8ff4545;
+  border-radius: 50px;
+  background: #b8ff4510;
+  color: #d7ff91;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  animation: rise .7s both;
+}
+
+.hero-badge span {
+  width: 8px;
+  height: 8px;
+  background: var(--lime);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--lime);
+  animation: pulse 1.5s infinite;
+}
+
+.hero h1 {
+  font: 900 clamp(4rem, 11vw, 8.5rem)/.8 'Barlow Condensed', sans-serif;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin: 30px 0;
+  animation: rise .8s .1s both;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--lime);
+  text-shadow: 0 0 35px #b8ff4525;
+}
+
+.hero-description {
+  max-width: 550px;
+  color: #c7d1c5;
+  line-height: 1.9;
+  font-size: .94rem;
+  animation: rise .8s .2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  animation: rise .8s .3s both;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 40px;
+  color: #d0d9ce;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.hero-meta b {
+  color: var(--lime);
+  margin-right: 7px;
+}
+
+.marquee {
+  overflow: hidden;
+  background: #0a100b;
+  border-block: 1px solid var(--line);
+  padding: 16px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+  font: 700 1rem 'Barlow Condensed', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c4cec2;
+}
+
+.marquee-track span {
+  padding-right: 35px;
+}
+
+.marquee-track b {
+  color: var(--lime);
+  padding: 0 22px;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  height: 470px;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .7s;
+}
+
+.about-image:hover img {
+  transform: scale(1.06);
+}
+
+.image-label {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  padding: 14px 18px;
+  background: #050906e8;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.image-label strong {
+  display: block;
+  color: var(--lime);
+  font: 700 1.3rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+.image-label small {
+  color: var(--muted);
+}
+
+.about-copy p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: .87rem;
+  margin-bottom: 15px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 25px 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.feature span {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  background: #b8ff4518;
+  color: var(--lime);
+  border-radius: 9px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.stat {
+  padding: 16px 12px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #b8ff4508;
+}
+
+.stat strong {
+  display: block;
+  color: var(--lime);
+  font: 800 1.8rem 'Barlow Condensed', sans-serif;
+}
+
+.stat small {
+  display: block;
+  color: var(--muted);
+  font-size: .65rem;
+  line-height: 1.6;
+}
+
+/* TRAINING PROGRAMS */
+
+.programs-section {
+  background: linear-gradient(180deg, transparent, #b8ff4506, transparent);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.program-card {
+  position: relative;
+  overflow: hidden;
+  padding: 27px;
+  border-radius: 21px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #101a12, #080d09);
+  transition: .35s;
+}
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -80px;
+  top: -80px;
+  border-radius: 50%;
+  background: #b8ff4518;
+  transition: .4s;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  border-color: #b8ff4570;
+  box-shadow: 0 20px 45px #0006;
+}
+
+.program-card:hover::before {
+  transform: scale(1.5);
+}
+
+.card-number {
+  color: var(--lime);
+  font: 700 .8rem 'Barlow Condensed', sans-serif;
+  letter-spacing: 2px;
+}
+
+.card-icon {
+  width: 53px;
+  height: 53px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #b8ff4518;
+  font-size: 1.5rem;
+  margin: 23px 0 17px;
+}
+
+.program-card h3 {
+  font: 700 1.55rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.program-card p {
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.85;
+}
+
+.card-link {
+  display: inline-block;
+  border: none;
+  background: none;
+  color: var(--lime);
+  font-size: .75rem;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+.info-note {
+  margin-top: 22px;
+  padding: 17px;
+  border-left: 3px solid var(--lime);
+  background: #b8ff450b;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.8;
+}
+
+/* TRAINING METHOD */
+
+.training-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.training-image {
+  position: sticky;
+  top: 100px;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.training-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.training-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+  background: linear-gradient(0deg, #030704ed, transparent 70%);
+}
+
+.training-overlay span {
+  color: var(--lime);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.training-overlay h3 {
+  font: 800 2.3rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.training-list {
+  display: grid;
+  gap: 12px;
+}
+
+.training-row {
+  display: grid;
+  grid-template-columns: 43px 1fr;
+  gap: 13px;
+  padding: 19px;
+  border: 1px solid #ffffff17;
+  border-radius: 16px;
+  background: #ffffff04;
+  transition: .3s;
+}
+
+.training-row:hover {
+  transform: translateX(5px);
+  border-color: var(--line);
+  background: #b8ff4508;
+}
+
+.training-number {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #b8ff4518;
+  color: var(--lime);
+  font-weight: 800;
+}
+
+.training-row h3 {
+  font: 700 1.25rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.training-row p {
+  color: var(--muted);
+  font-size: .77rem;
+  line-height: 1.8;
+}
+
+/* FACILITIES */
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .8fr;
+  grid-template-rows: 210px 210px;
+  gap: 13px;
+}
+
+.facility {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+}
+
+.facility:first-child {
+  grid-row: span 2;
+}
+
+.facility img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.78) saturate(.8);
+  transition: .7s;
+}
+
+.facility:hover img {
+  transform: scale(1.08);
+  filter: brightness(1);
+}
+
+.facility::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, #000e);
+}
+
+.facility-caption {
+  position: absolute;
+  z-index: 1;
+  left: 17px;
+  bottom: 16px;
+}
+
+.facility-caption small {
+  color: var(--lime);
+  font-size: .65rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.facility-caption h3 {
+  font: 700 1.4rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 185px;
+  gap: 12px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(6) {
+  grid-column: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.8) saturate(.8);
+  transition: .6s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1) saturate(1);
+}
+
+.disclaimer {
+  color: var(--muted);
+  font-size: .7rem;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+/* JOINING STEPS */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+}
+
+.step {
+  padding: 23px 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #b8ff4507;
+}
+
+.step-number {
+  color: #b8ff4580;
+  font: 800 2.5rem 'Barlow Condensed', sans-serif;
+}
+
+.step h3 {
+  font: 700 1.25rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin: 12px 0 8px;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: .74rem;
+  line-height: 1.8;
+}
+
+/* FAQ */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 45px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.faq {
+  border: 1px solid #ffffff18;
+  border-radius: 14px;
+  background: #ffffff04;
+  overflow: hidden;
+}
+
+.faq button {
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  text-align: left;
+  background: none;
+  color: white;
+  border: none;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.faq button span:last-child {
+  color: var(--lime);
+  font-size: 1.1rem;
+}
+
+.faq p {
+  display: none;
+  padding: 0 18px 18px;
+  color: var(--muted);
+  font-size: .77rem;
+  line-height: 1.8;
+}
+
+.faq.open p {
+  display: block;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 22px;
+}
+
+.contact-card,
+.enquiry-card {
+  padding: 29px;
+  border: 1px solid var(--line);
+  border-radius: 23px;
+  background: linear-gradient(145deg, #101a12, #080d09);
+}
+
+.contact-card h3,
+.enquiry-card h3 {
+  font: 800 2.2rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+
+.contact-card > p,
+.enquiry-card > p {
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 13px;
+  padding: 15px 0;
+  border-top: 1px solid #ffffff12;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #b8ff4518;
+  color: var(--lime);
+  border-radius: 12px;
+}
+
+.contact-detail small {
+  display: block;
+  color: var(--muted);
+  font-size: .65rem;
+  margin-bottom: 5px;
+}
+
+.contact-detail strong {
+  font-size: .8rem;
+  line-height: 1.7;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.enquiry-card {
+  background: radial-gradient(circle at top right, #b8ff4512, transparent 40%), #0a100b;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: #070c08;
+  border: 1px solid #ffffff20;
+  color: white;
+  padding: 12px;
+  border-radius: 11px;
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--lime);
+}
+
+.field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.field select option {
+  background: #0a100b;
+}
+
+.enquiry-card .btn {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.form-note {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: .67rem;
+  line-height: 1.7;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 0 95px;
+  border-top: 1px solid var(--line);
+  background: #040705;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  color: var(--muted);
+  font-size: .7rem;
+  line-height: 1.8;
+}
+
+/* POPUPS */
+
+.modal-backdrop,
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #000c;
+  backdrop-filter: blur(12px);
+}
+
+.modal-backdrop.show,
+.lightbox.show {
+  display: flex;
+  animation: fadeIn .25s;
+}
+
+.modal {
+  position: relative;
+  width: min(500px, 100%);
+  padding: 30px;
+  border: 1px solid #b8ff4550;
+  border-radius: 23px;
+  background: #0a100b;
+  box-shadow: 0 30px 90px #0009;
+  animation: popIn .3s;
+}
+
+.modal-close {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.modal-icon {
+  font-size: 2rem;
+}
+
+.modal h3 {
+  font: 800 2rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  margin: 17px 0 10px;
+}
+
+.modal p {
+  color: var(--muted);
+  font-size: .83rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 15px;
+}
+
+.lightbox-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 43px;
+  height: 43px;
+  background: #0b120d;
+  color: white;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 1.3rem;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  50% { box-shadow: 0 0 0 8px #b8ff4500; }
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(15px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* MOBILE */
+
+.mobile-bar {
+  display: none;
+}
+
+@media(max-width: 950px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: .69rem; }
+  .about-grid,
+  .training-grid,
+  .faq-grid { grid-template-columns: 1fr; gap: 30px; }
+  .program-grid { grid-template-columns: repeat(2, 1fr); }
+  .training-image { position: relative; top: auto; height: 390px; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media(max-width: 760px) {
+  .container { width: calc(100% - 30px); }
+  .section { padding: 70px 0; }
+
+  .nav { height: 70px; }
+  .brand-name { font-size: .95rem; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 15px;
+    right: 15px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #050906f8;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 13px 8px;
+    border-bottom: 1px solid #ffffff10;
+    font-size: .82rem;
+  }
+
+  .nav > .btn { display: none; }
+  .menu-toggle { display: block; }
+
+  .hero { min-height: 730px; padding: 120px 0 65px; }
+  .hero::before {
     background:
-
-    radial-gradient(
-        circle at 80% 5%,
-        rgba(184,255,69,.18),
-        transparent 32%
-    ),
-
-    radial-gradient(
-        circle at 5% 60%,
-        rgba(0,130,55,.12),
-        transparent 35%
-    );
-
-    pointer-events:none;
-
-    z-index:-3;
-
-}
-
-
-/* animated glow */
-
-body::after{
-
-    content:"";
-
-    position:fixed;
-
-    width:450px;
-
-    height:450px;
-
-    border-radius:50%;
-
-    right:-200px;
-
-    top:180px;
-
-    background:
-    rgba(184,255,69,.07);
-
-    filter:blur(80px);
-
-    animation:
-    glowMove 8s ease-in-out infinite alternate;
-
-    pointer-events:none;
-
-    z-index:-2;
-
-}
-
-
-/* =====================================================
-   NAVBAR
-===================================================== */
-
-.navbar{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    padding:
-    15px 18px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    background:
-    rgba(5,10,7,.72);
-
-    backdrop-filter:
-    blur(18px);
-
-    border-bottom:
-    1px solid var(--border);
-
-    z-index:100;
-
-}
-
-
-/* logo */
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    font-weight:900;
-
-}
-
-
-/* logo box */
-
-.logo-icon{
-
-    width:44px;
-
-    height:44px;
-
-    border-radius:14px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-    var(--green);
-
-    color:#07100b;
-
-    font-size:23px;
-
-    box-shadow:
-    0 0 25px
-    rgba(184,255,69,.25);
-
-    animation:
-    logoPulse 3s infinite;
-
-}
-
-
-.logo-text{
-
-    font-size:12px;
-
-    line-height:1.1;
-
-}
-
-
-.logo-text span{
-
-    color:var(--green);
-
-}
-
-
-/* contact */
-
-.menu-btn{
-
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    rgba(255,255,255,.03);
-
-    color:#ffffff;
-
-    padding:
-    11px 16px;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-.menu-btn:hover{
-
-    border-color:
-    var(--green);
-
-    color:
-    var(--green);
-
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-    min-height:100vh;
-
-    padding:
-    150px 22px 70px;
-
-    display:flex;
-
-    align-items:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-/* decorative circle */
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:350px;
-
-    height:350px;
-
-    border-radius:50%;
-
-    right:-160px;
-
-    top:130px;
-
-    border:
-    1px solid
-    rgba(184,255,69,.12);
-
-    box-shadow:
-    0 0 100px
-    rgba(184,255,69,.08);
-
-    animation:
-    rotateCircle 15s linear infinite;
-
-}
-
-
-/* decorative line */
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-
-    height:180px;
-
-    left:-100px;
-
-    bottom:100px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(184,255,69,.10);
-
-    animation:
-    float 6s ease-in-out infinite;
-
-}
-
-
-.hero-content{
-
-    width:100%;
-
-    max-width:950px;
-
-    margin:auto;
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-
-/* small heading */
-
-.small-title{
-
-    color:var(--green);
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    animation:
-    fadeUp .8s ease both;
-
-}
-
-
-/* main heading */
-
-.hero h1{
-
-    margin-top:18px;
-
-    font-size:
-    clamp(
-        55px,
-        13vw,
-        110px
-    );
-
-    line-height:.88;
-
-    letter-spacing:-5px;
-
-    animation:
-    heroText 1s
-    cubic-bezier(.2,.8,.2,1)
-    both;
-
-}
-
-
-.hero h1 span{
-
-    color:var(--green);
-
-    text-shadow:
-    0 0 35px
-    rgba(184,255,69,.18);
-
-}
-
-
-/* description */
-
-.hero-description{
-
-    max-width:650px;
-
-    margin-top:28px;
-
-    color:var(--muted);
-
-    font-size:18px;
-
-    line-height:1.7;
-
-    animation:
-    fadeUp 1s .25s
-    ease both;
-
-}
-
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.buttons{
-
-    display:flex;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-
-    margin-top:30px;
-
-    animation:
-    fadeUp 1s .4s
-    ease both;
-
-}
-
-
-.btn{
-
-    padding:
-    15px 20px;
-
-    border-radius:14px;
-
-    border:none;
-
-    cursor:pointer;
-
-    font-weight:800;
-
-    transition:
-    transform .3s,
-    box-shadow .3s;
-
-}
-
-
-.btn-primary{
-
-    background:
-    var(--green);
-
-    color:#07100b;
-
-    box-shadow:
-    0 10px 40px
-    rgba(184,255,69,.20);
-
-}
-
-
-.btn-primary:hover{
-
-    transform:
-    translateY(-5px);
-
-    box-shadow:
-    0 15px 50px
-    rgba(184,255,69,.35);
-
-}
-
-
-.btn-secondary{
-
-    background:
-    rgba(255,255,255,.04);
-
-    border:
-    1px solid
-    var(--border);
-
-    color:white;
-
-}
-
-
-.btn-secondary:hover{
-
-    transform:
-    translateY(-5px);
-
-    border-color:
-    rgba(184,255,69,.45);
-
-}
-
-
-/* =====================================================
-   STATS
-===================================================== */
-
-.stats{
-
-    margin-top:40px;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:10px;
-
-    max-width:700px;
-
-    animation:
-    fadeUp 1s .55s
-    ease both;
-
-}
-
-
-.stat{
-
-    padding:17px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:17px;
-
-    background:
-    rgba(255,255,255,.025);
-
-    backdrop-filter:
-    blur(10px);
-
-    transition:.3s;
-
-}
-
-
-.stat:hover{
-
-    transform:
-    translateY(-5px);
-
-    border-color:
-    rgba(184,255,69,.3);
-
-}
-
-
-.stat strong{
-
-    display:block;
-
-    font-size:21px;
-
-}
-
-
-.stat span{
-
-    display:block;
-
-    margin-top:5px;
-
-    color:var(--muted);
-
-    font-size:12px;
-
-}
-
-
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-section{
-
-    padding:
-    90px 20px;
-
-}
-
-
-.container{
-
-    max-width:1000px;
-
-    margin:auto;
-
-}
-
-
-.section-title{
-
-    font-size:35px;
-
-    margin-bottom:10px;
-
-    letter-spacing:-1px;
-
-}
-
-
-.section-subtitle{
-
-    color:var(--muted);
-
-    margin-bottom:30px;
-
-}
-
-
-/* =====================================================
-   CARDS
-===================================================== */
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:13px;
-
-}
-
-
-.card{
-
-    min-height:190px;
-
-    padding:25px;
-
-    border-radius:24px;
-
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(22,38,26,.96),
-        rgba(10,18,12,.96)
-    );
-
-    cursor:pointer;
-
-    position:relative;
-
-    overflow:hidden;
-
-    transition:
-    transform .4s
-    cubic-bezier(.2,.8,.2,1),
-    border .3s,
-    box-shadow .3s;
-
-    opacity:0;
-
-    transform:
-    translateY(35px);
-
-}
-
-
-/* animated card line */
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-
-    height:2px;
-
-    left:-130px;
-
-    top:0;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        var(--green),
-        transparent
-    );
-
-    transition:
-    left .7s ease;
-
-}
-
-
-.card:hover::before{
-
-    left:100%;
-
-}
-
-
-.card:hover{
-
-    transform:
-    translateY(-8px);
-
-    border-color:
-    rgba(184,255,69,.35);
-
-    box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.25);
-
-}
-
-
-.card.show{
-
-    opacity:1;
-
-    transform:
-    translateY(0);
-
-}
-
-
-/* arrow */
-
-.card::after{
-
-    content:"↗";
-
-    position:absolute;
-
-    right:20px;
-
-    top:18px;
-
-    color:var(--green);
-
-    font-size:22px;
-
-    transition:.3s;
-
-}
-
-
-.card:hover::after{
-
-    transform:
-    translate(4px,-4px);
-
-}
-
-
-/* icon */
-
-.card-icon{
-
-    font-size:35px;
-
-    margin-bottom:25px;
-
-    transition:
-    transform .4s;
-
-}
-
-
-.card:hover .card-icon{
-
-    transform:
-    scale(1.15)
-    rotate(-4deg);
-
-}
-
-
-.card h3{
-
-    font-size:20px;
-
-    margin-bottom:8px;
-
-}
-
-
-.card p{
-
-    color:var(--muted);
-
-    line-height:1.6;
-
-}
-
-
-/* feature */
-
-.feature{
-
-    grid-column:
-    span 2;
-
-    min-height:230px;
-
-}
-
-
-.feature h3{
-
-    font-size:42px;
-
-    letter-spacing:-2px;
-
-}
-
-
-.feature h3 span{
-
-    color:var(--green);
-
-}
-
-
-/* =====================================================
-   GALLERY
-===================================================== */
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:
-    1.4fr .8fr;
-
-    gap:12px;
-
-}
-
-
-.photo{
-
-    min-height:200px;
-
-    border-radius:22px;
-
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    linear-gradient(
-        145deg,
-        #21482a,
-        #09130c
-    );
-
-    position:relative;
-
-    display:flex;
-
-    align-items:flex-end;
-
-    padding:15px;
-
-    overflow:hidden;
-
-    transition:.4s;
-
-}
-
-
-.photo:hover{
-
-    transform:
-    scale(1.02);
-
-    border-color:
-    rgba(184,255,69,.35);
-
-}
-
-
-.photo:first-child{
-
-    grid-row:
-    span 2;
-
-    min-height:410px;
-
-}
-
-
-.photo::before{
-
-    content:"🏏";
-
-    position:absolute;
-
-    font-size:100px;
-
-    opacity:.12;
-
-    left:50%;
-
-    top:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-    animation:
-    float 5s ease-in-out infinite;
-
-}
-
-
-.photo span{
-
-    position:relative;
-
-    z-index:2;
-
-    background:
-    rgba(0,0,0,.55);
-
-    padding:
-    8px 12px;
-
-    border-radius:10px;
-
-    font-size:13px;
-
-    backdrop-filter:
-    blur(5px);
-
-}
-
-
-/* =====================================================
-   MOBILE ACTION BAR
-===================================================== */
-
-.bottom-bar{
-
-    position:fixed;
-
-    bottom:12px;
-
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-    width:
-    calc(100% - 24px);
-
-    max-width:520px;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:7px;
-
-    padding:7px;
-
-    background:
-    rgba(5,10,7,.90);
-
-    backdrop-filter:
-    blur(20px);
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:20px;
-
-    z-index:200;
-
-    box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.5);
-
-}
-
-
-.bottom-bar button{
-
-    border:none;
-
-    padding:
-    13px 5px;
-
-    border-radius:13px;
-
-    background:
-    rgba(255,255,255,.035);
-
-    color:white;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-.bottom-bar button:hover{
-
-    transform:
-    translateY(-3px);
-
-}
-
-
-.bottom-bar button:first-child{
-
-    background:
-    var(--green);
-
-    color:#07100b;
-
-    box-shadow:
-    0 0 25px
-    rgba(184,255,69,.15);
-
-}
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.modal{
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-    rgba(0,0,0,.78);
-
-    backdrop-filter:
-    blur(14px);
-
-    z-index:500;
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:15px;
-
-}
-
-
-.modal.active{
-
-    display:flex;
-
-}
-
-
-.modal-box{
-
-    width:100%;
-
-    max-width:700px;
-
-    max-height:90vh;
-
-    overflow:auto;
-
-    padding:28px;
-
-    border-radius:28px;
-
-    background:
-    linear-gradient(
-        145deg,
-        #16261a,
-        #07100b
-    );
-
-    border:
-    1px solid
-    rgba(184,255,69,.18);
-
-    box-shadow:
-    0 30px 100px
-    rgba(0,0,0,.55);
-
-    animation:
-    modalIn .4s
-    cubic-bezier(.2,.8,.2,1);
-
-}
-
-
-.close{
-
-    float:right;
-
-    width:40px;
-
-    height:40px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    var(--border);
-
-    background:
-    rgba(255,255,255,.04);
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-.close:hover{
-
-    background:
-    var(--green);
-
-    color:#07100b;
-
-    transform:
-    rotate(90deg);
-
-}
-
-
-.modal-box h2{
-
-    font-size:34px;
-
-    margin:
-    10px 0 20px;
-
-}
-
-
-.modal-box p{
-
-    color:var(--muted);
-
-    line-height:1.7;
-
-}
-
-
-.modal-box ul{
-
-    margin-top:20px;
-
-    padding-left:20px;
-
-    color:var(--muted);
-
-    line-height:2;
-
-}
-
-
-.contact-buttons{
-
-    margin-top:25px;
-
-    display:grid;
-
-    gap:10px;
-
-}
-
-
-.contact-buttons a{
-
-    padding:15px;
-
-    border-radius:14px;
-
-    background:
-    rgba(255,255,255,.04);
-
-    border:
-    1px solid
-    var(--border);
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-
-.contact-buttons a:hover{
-
-    border-color:
-    var(--green);
-
-    transform:
-    translateX(5px);
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    padding:
-    60px 20px 120px;
-
-    text-align:center;
-
-    color:var(--muted);
-
-    font-size:13px;
-
-}
-
-
-footer strong{
-
-    color:#ffffff;
-
-}
-
-
-/* =====================================================
-   ANIMATIONS
-===================================================== */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
-
-}
-
-
-@keyframes heroText{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(60px)
-        scale(.94);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0)
-        scale(1);
-
-    }
-
-}
-
-
-@keyframes modalIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(50px)
-        scale(.94);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0)
-        scale(1);
-
-    }
-
-}
-
-
-@keyframes float{
-
-    0%,100%{
-
-        transform:
-        translateY(0);
-
-    }
-
-    50%{
-
-        transform:
-        translateY(-15px);
-
-    }
-
-}
-
-
-@keyframes glowMove{
-
-    from{
-
-        transform:
-        translate(0,0);
-
-    }
-
-    to{
-
-        transform:
-        translate(-120px,100px);
-
-    }
-
-}
-
-
-@keyframes rotateCircle{
-
-    from{
-
-        transform:
-        rotate(0deg);
-
-    }
-
-    to{
-
-        transform:
-        rotate(360deg);
-
-    }
-
-}
-
-
-@keyframes logoPulse{
-
-    0%,100%{
-
-        box-shadow:
-        0 0 20px
-        rgba(184,255,69,.18);
-
-    }
-
-    50%{
-
-        box-shadow:
-        0 0 35px
-        rgba(184,255,69,.38);
-
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:650px){
-
-    .hero{
-
-        padding-top:
-        140px;
-
-    }
-
-
-    .hero h1{
-
-        font-size:
-        58px;
-
-        letter-spacing:
-        -3px;
-
-    }
-
-
-    .hero-description{
-
-        font-size:
-        16px;
-
-    }
-
-
-    .stats{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-
-    .stats .stat:last-child{
-
-        grid-column:
-        span 2;
-
-    }
-
-
-    .cards{
-
-        grid-template-columns:
-        1fr;
-
-    }
-
-
-    .feature{
-
-        grid-column:
-        span 1;
-
-    }
-
-
-    .feature h3{
-
-        font-size:
-        34px;
-
-    }
-
-
-    .gallery{
-
-        grid-template-columns:
-        1fr 1fr;
-
-    }
-
-
-    .photo:first-child{
-
-        min-height:
-        300px;
-
-    }
-
-
-    .photo{
-
-        min-height:
-        145px;
-
-    }
-
-
-    section{
-
-        padding:
-        65px 18px;
-
-    }
-
-
-    .section-title{
-
-        font-size:
-        30px;
-
-    }
-
-
-    .modal-box{
-
-        padding:
-        24px;
-
-        border-radius:
-        25px;
-
-    }
-
+      linear-gradient(90deg, #030704ed, #03070485),
+      linear-gradient(0deg, var(--bg), transparent 35%),
+      url('https://images.unsplash.com/photo-1593766827228-8737b9cd6cc1?auto=format&fit=crop&w=1200&q=85')
+      center / cover;
+  }
+
+  .hero h1 { font-size: clamp(3.8rem, 17vw, 6rem); }
+  .hero-description { font-size: .87rem; }
+  .hero-meta { gap: 14px; }
+  .hero-meta span { font-size: .66rem; }
+
+  .section-title { font-size: 3.2rem; }
+  .about-image { height: 340px; }
+  .feature-grid { gap: 10px; }
+  .feature { font-size: .68rem; }
+  .stats { gap: 7px; }
+  .stat { padding: 13px 9px; }
+  .stat strong { font-size: 1.45rem; }
+  .stat small { font-size: .58rem; }
+
+  .program-grid { grid-template-columns: 1fr; }
+  .program-card { padding: 23px; }
+
+  .facility-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 145px 145px;
+  }
+
+  .facility:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    gap: 8px;
+  }
+
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(6) { grid-column: span 2; }
+
+  .steps-grid { gap: 9px; }
+  .step { padding: 17px 14px; }
+  .step h3 { font-size: 1.1rem; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-card, .enquiry-card { padding: 23px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+
+  .footer-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mobile-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+    background: #050906ed;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid var(--line);
+  }
+
+  .mobile-bar .btn {
+    padding: 12px 8px;
+    font-size: .72rem;
+  }
+
+  footer { padding-bottom: 110px; }
+}
+
+@media(max-width: 390px) {
+  .hero h1 { font-size: 3.7rem; }
+  .hero-buttons .btn { width: 100%; }
+  .stats, .steps-grid { grid-template-columns: 1fr; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
+<header id="header">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <span class="brand-icon">🏏</span>
+      <span class="brand-name">
+        Ramesh Cricket Academy
+        <small>MYSURU · KARNATAKA</small>
+      </span>
+    </a>
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#training">Training</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<header class="navbar">
-
-    <div class="logo">
-
-        <div class="logo-icon">
-            🏏
-        </div>
-
-        <div class="logo-text">
-
-            RAMESH
-
-            <br>
-
-            <span>
-                CRICKET ACADEMY
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <button
-    class="menu-btn"
-    onclick="openModal('contact')">
-
-        CONTACT
-
-    </button>
-
+    <a class="btn btn-primary" href="#contact">Enquire Now ↗</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  </div>
 </header>
 
+<main>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-
-    <div class="small-title">
-
-        MYSURU • CRICKET ACADEMY
-
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <span></span> YOUR CRICKET JOURNEY STARTS HERE
     </div>
 
-
-    <h1>
-
-        TRAIN.<br>
-
-        <span>IMPROVE.</span><br>
-
-        COMPETE.
-
-    </h1>
-
+    <h1>Train.<br><span>Improve.</span> Compete.</h1>
 
     <p class="hero-description">
-
-        A dedicated cricket training environment
-        for aspiring players. Develop your skills,
-        practice consistently and take your cricket
-        to the next level.
-
+      Build your game one delivery at a time. Work on batting,
+      bowling, fielding and match awareness in a cricket-focused
+      training environment in Mysuru.
     </p>
 
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#programs">Explore Training ↗</a>
+      <button class="btn btn-outline" data-modal="trial">Ask About a Trial ＋</button>
+    </div>
 
-    <div class="buttons">
+    <div class="hero-meta">
+      <span><b>✳</b> Skill development</span>
+      <span><b>◷</b> Daily hours listed</span>
+      <span><b>⌖</b> Mysuru, Karnataka</span>
+    </div>
+  </div>
+</section>
 
-        <button
-        class="btn btn-primary"
-        onclick="openModal('trial')">
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Batting Fundamentals <b>✳</b> Bowling Technique <b>✳</b> Fielding Practice <b>✳</b> Match Awareness <b>✳</b> Fitness & Agility <b>✳</b></span>
+    <span>Batting Fundamentals <b>✳</b> Bowling Technique <b>✳</b> Fielding Practice <b>✳</b> Match Awareness <b>✳</b> Fitness & Agility <b>✳</b></span>
+  </div>
+</div>
 
-            🏏 BOOK A TRIAL
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
 
+    <div class="about-image reveal">
+      <img loading="lazy"
+        src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1100&q=85"
+        alt="Cricket ground and players">
+
+      <div class="image-label">
+        <strong>Play With Purpose</strong>
+        <small>Learn · Practise · Progress</small>
+      </div>
+    </div>
+
+    <div class="about-copy reveal">
+      <span class="eyebrow">About the academy</span>
+      <h2 class="section-title">Make Every<br><span>Session Count.</span></h2>
+
+      <p>
+        Ramesh Cricket Academy is publicly listed in the
+        Jayanagar–Kuvempu Nagara area of Mysuru. Public directory
+        information identifies it as a cricket coaching and practice
+        centre for aspiring players.
+      </p>
+
+      <p>
+        This website describes common cricket-training areas and helps
+        visitors enquire about coaching arrangements. Official batch
+        times, fees and coach names should be confirmed directly.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature"><span>✓</span> Batting development</div>
+        <div class="feature"><span>✓</span> Bowling fundamentals</div>
+        <div class="feature"><span>✓</span> Fielding and catching</div>
+        <div class="feature"><span>✓</span> Game awareness</div>
+      </div>
+
+      <a href="#contact" class="btn btn-primary">Connect With Us ↗</a>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>01</strong>
+          <small>Cricket-first training focus</small>
+        </div>
+        <div class="stat">
+          <strong>7 Days</strong>
+          <small>Daily hours listed publicly</small>
+        </div>
+        <div class="stat">
+          <strong>MYS</strong>
+          <small>Mysuru, Karnataka</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section programs-section" id="programs">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Training programs</span>
+      <h2 class="section-title">Find Your <span>Next Level.</span></h2>
+      <p class="section-description">
+        Build fundamentals, repeat the right drills and grow confidence
+        in every part of your game. Ask the academy which options are
+        currently available for your age and skill level.
+      </p>
+    </div>
+
+    <div class="program-grid">
+
+      <article class="program-card reveal">
+        <span class="card-number">01 / BAT</span>
+        <div class="card-icon">🏏</div>
+        <h3>Batting Development</h3>
+        <p>Work on stance, grip, balance, footwork, timing, shot selection
+          and responding to different lines and lengths.</p>
+        <button class="card-link" data-modal="batting">Explore focus areas ↗</button>
+      </article>
+
+      <article class="program-card reveal">
+        <span class="card-number">02 / BOWL</span>
+        <div class="card-icon">🎯</div>
+        <h3>Bowling Skills</h3>
+        <p>Practise run-up rhythm, release point, line and length,
+          accuracy, control and pace or spin fundamentals.</p>
+        <button class="card-link" data-modal="bowling">Explore focus areas ↗</button>
+      </article>
+
+      <article class="program-card reveal">
+        <span class="card-number">03 / FIELD</span>
+        <div class="card-icon">🧤</div>
+        <h3>Fielding & Catching</h3>
+        <p>Develop ground fielding, catching technique, throwing
+          accuracy, movement and quick reactions.</p>
+        <button class="card-link" data-modal="fielding">Explore focus areas ↗</button>
+      </article>
+
+      <article class="program-card reveal">
+        <span class="card-number">04 / START</span>
+        <div class="card-icon">🌱</div>
+        <h3>Beginner Foundations</h3>
+        <p>Learn the rules, equipment basics and simple batting,
+          bowling and fielding drills step by step.</p>
+        <button class="card-link" data-modal="beginner">Explore focus areas ↗</button>
+      </article>
+
+      <article class="program-card reveal">
+        <span class="card-number">05 / GAME</span>
+        <div class="card-icon">📋</div>
+        <h3>Match Awareness</h3>
+        <p>Understand field placements, running between wickets,
+          communication and game situations.</p>
+        <button class="card-link" data-modal="match">Explore focus areas ↗</button>
+      </article>
+
+      <article class="program-card reveal">
+        <span class="card-number">06 / MOVE</span>
+        <div class="card-icon">⚡</div>
+        <h3>Agility & Fitness</h3>
+        <p>Support cricket performance with movement, coordination,
+          warm-ups, balance and suitable conditioning.</p>
+        <button class="card-link" data-modal="fitness">Explore focus areas ↗</button>
+      </article>
+
+    </div>
+
+    <div class="info-note reveal">
+      <strong>Important:</strong> These are suggested training categories
+      commonly used in cricket coaching, not a verified official timetable.
+      Batch times, age limits, coach names, fees and tournament schedules
+      must be confirmed with the academy.
+    </div>
+
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section class="section" id="training">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">How training can work</span>
+      <h2 class="section-title">Practice With <span>Purpose.</span></h2>
+      <p class="section-description">
+        A clear training rhythm can help players build technique,
+        consistency and confidence. Actual sessions depend on the
+        academy's current coaching arrangements.
+      </p>
+    </div>
+
+    <div class="training-grid">
+
+      <div class="training-image reveal">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=85"
+          alt="Cricket pitch and field">
+
+        <div class="training-overlay">
+          <span>Every Ball Is a Lesson</span>
+          <h3>Build the Basics.<br>Trust Your Game.</h3>
+        </div>
+      </div>
+
+      <div class="training-list">
+
+        <article class="training-row reveal">
+          <span class="training-number">01</span>
+          <div>
+            <h3>Warm-up & Movement</h3>
+            <p>Start with mobility, light movement and coordination
+              to prepare for practice.</p>
+          </div>
+        </article>
+
+        <article class="training-row reveal">
+          <span class="training-number">02</span>
+          <div>
+            <h3>Technique Drills</h3>
+            <p>Repeat batting, bowling or fielding fundamentals with
+              attention to balance, control and consistency.</p>
+          </div>
+        </article>
+
+        <article class="training-row reveal">
+          <span class="training-number">03</span>
+          <div>
+            <h3>Net & Skill Practice</h3>
+            <p>Practise decision-making and respond to different
+              deliveries or fielding situations where facilities allow.</p>
+          </div>
+        </article>
+
+        <article class="training-row reveal">
+          <span class="training-number">04</span>
+          <div>
+            <h3>Game Situations</h3>
+            <p>Apply skills through scenarios, communication and
+              match-style practice when scheduled.</p>
+          </div>
+        </article>
+
+        <article class="training-row reveal">
+          <span class="training-number">05</span>
+          <div>
+            <h3>Review & Next Goals</h3>
+            <p>Identify areas to improve and ask the coach for
+              suitable practice priorities.</p>
+          </div>
+        </article>
+
+        <button class="btn btn-primary" data-modal="timings">
+          Ask About Batches & Timings ↗
         </button>
 
+      </div>
+    </div>
+  </div>
+</section>
 
-        <button
-        class="btn btn-secondary"
-        onclick="openModal('programs')">
+<!-- FACILITIES -->
+<section class="section" id="facilities">
+  <div class="container">
 
-            EXPLORE TRAINING
+    <div class="section-heading reveal">
+      <span class="eyebrow">Cricket environment</span>
+      <h2 class="section-title">Made for the <span>Love of Cricket.</span></h2>
+      <p class="section-description">
+        Explore the types of spaces and practice areas players commonly
+        look for. The photographs below are illustrative cricket images,
+        not verified photographs of the academy's premises.
+      </p>
+    </div>
 
+    <div class="facility-grid">
+
+      <article class="facility reveal">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1593766827228-8737b9cd6cc1?auto=format&fit=crop&w=1100&q=85"
+          alt="Cricket ground and pitch">
+        <div class="facility-caption">
+          <small>01 / Outdoor practice</small>
+          <h3>Ground & Pitch</h3>
+        </div>
+      </article>
+
+      <article class="facility reveal">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?auto=format&fit=crop&w=800&q=85"
+          alt="Cricket batting action">
+        <div class="facility-caption">
+          <small>02 / Technique</small>
+          <h3>Batting Practice</h3>
+        </div>
+      </article>
+
+      <article class="facility reveal">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800&q=85"
+          alt="Cricket match">
+        <div class="facility-caption">
+          <small>03 / Match skills</small>
+          <h3>Game Awareness</h3>
+        </div>
+      </article>
+
+      <article class="facility reveal">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=800&q=85"
+          alt="Outdoor sports ground">
+        <div class="facility-caption">
+          <small>04 / Team sport</small>
+          <h3>Team Spirit</h3>
+        </div>
+      </article>
+
+      <article class="facility reveal">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=85"
+          alt="Cricket stadium and field">
+        <div class="facility-caption">
+          <small>05 / Play smart</small>
+          <h3>Match Preparation</h3>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="section-title">Feel the <span>Game.</span></h2>
+      <p class="section-description">
+        A visual look at cricket, practice and match-day energy.
+        Tap any photograph to view it larger.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item reveal">
+        <img loading="lazy" data-lightbox
+          src="https://images.unsplash.com/photo-1593766827228-8737b9cd6cc1?auto=format&fit=crop&w=1000&q=85"
+          alt="Cricket ground">
+      </div>
+
+      <div class="gallery-item reveal">
+        <img loading="lazy" data-lightbox
+          src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?auto=format&fit=crop&w=800&q=85"
+          alt="Batting action">
+      </div>
+
+      <div class="gallery-item reveal">
+        <img loading="lazy" data-lightbox
+          src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800&q=85"
+          alt="Cricket match">
+      </div>
+
+      <div class="gallery-item reveal">
+        <img loading="lazy" data-lightbox
+          src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=85"
+          alt="Cricket stadium">
+      </div>
+
+      <div class="gallery-item reveal">
+        <img loading="lazy" data-lightbox
+          src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=800&q=85"
+          alt="Sports ground">
+      </div>
+
+      <div class="gallery-item reveal">
+        <img loading="lazy" data-lightbox
+          src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1000&q=85"
+          alt="Cricket game">
+      </div>
+
+    </div>
+
+    <p class="disclaimer">
+      These are illustrative images hosted by Unsplash. Replace them with
+      academy-owned photographs before presenting them as the academy's
+      actual facilities.
+    </p>
+
+  </div>
+</section>
+
+<!-- GETTING STARTED -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Getting started</span>
+      <h2 class="section-title">Start Your <span>Cricket Journey.</span></h2>
+      <p class="section-description">
+        Contact the academy and confirm the details that matter to you
+        before joining.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+
+      <article class="step reveal">
+        <div class="step-number">01</div>
+        <h3>Make an Enquiry</h3>
+        <p>Share the player's age, experience and preferred practice time.</p>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-number">02</div>
+        <h3>Confirm Details</h3>
+        <p>Ask about current batches, fees, equipment and timings.</p>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-number">03</div>
+        <h3>Ask About a Visit</h3>
+        <p>Check whether a trial or introductory visit is available.</p>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-number">04</div>
+        <h3>Set Your Goals</h3>
+        <p>Choose skills to improve and build a consistent practice routine.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container faq-grid">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Quick answers</span>
+      <h2 class="section-title">Good to <span>Know.</span></h2>
+      <p class="section-description">
+        Common questions to help players and parents plan a visit.
+        Contact the academy to confirm current details.
+      </p>
+      <br>
+      <button class="btn btn-outline" data-modal="question">Ask a Question ↗</button>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq">
+        <button><span>Where is the academy located?</span><span>＋</span></button>
+        <p>Public listings place the academy around New Kantharaj Urs Road, Jayanagar, Kuvempu Nagara, Mysuru, Karnataka. Use the map link below and confirm the correct entrance.</p>
+      </div>
+
+      <div class="faq">
+        <button><span>What are the listed operating hours?</span><span>＋</span></button>
+        <p>A public listing shows approximate daily hours of 5:30 AM to 9:30 PM. These are general operating hours, not confirmed coaching batch times. Call before visiting.</p>
+      </div>
+
+      <div class="faq">
+        <button><span>What are the coaching fees?</span><span>＋</span></button>
+        <p>Current fees could not be reliably confirmed from the public information used for this page. Contact the academy for the latest fee structure.</p>
+      </div>
+
+      <div class="faq">
+        <button><span>Which age groups can join?</span><span>＋</span></button>
+        <p>Ask which age groups and skill levels are currently accepted and whether separate batches are available.</p>
+      </div>
+
+      <div class="faq">
+        <button><span>Can I attend a trial session?</span><span>＋</span></button>
+        <p>Trial availability is not confirmed. Contact the academy to ask whether an introductory session can be arranged.</p>
+      </div>
+
+      <div class="faq">
+        <button><span>Should I bring cricket equipment?</span><span>＋</span></button>
+        <p>Confirm the equipment policy before your first visit. Ask whether bats, pads, gloves and protective gear are provided.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Contact & location</span>
+      <h2 class="section-title">Let's Talk <span>Cricket.</span></h2>
+      <p class="section-description">
+        Contact the academy to check coaching options, current timings
+        and enrolment details.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card reveal">
+        <span class="eyebrow">Visit the academy</span>
+        <h3>One Call Can<br>Start It All.</h3>
+        <p>For accurate information, speak directly with the academy before visiting.</p>
+
+        <div class="contact-detail">
+          <div class="contact-icon">☎</div>
+          <div>
+            <small>PHONE / ENQUIRIES</small>
+            <strong><a href="tel:+918511338530">08511 338530</a></strong>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">⌖</div>
+          <div>
+            <small>PUBLICLY LISTED LOCATION</small>
+            <strong>
+              New Kantharaj Urs Road, Jayanagar,<br>
+              Kuvempu Nagara, Mysuru,<br>
+              Karnataka 570014
+            </strong>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">◷</div>
+          <div>
+            <small>LISTED OPERATING HOURS</small>
+            <strong>Daily · Approximately 5:30 AM – 9:30 PM</strong>
+          </div>
+        </div>
+
+        <div class="contact-buttons">
+          <a class="btn btn-primary"
+             href="https://wa.me/918511338530?text=Hello%20Ramesh%20Cricket%20Academy%2C%20I%20would%20like%20to%20know%20about%20coaching%20batches%2C%20fees%20and%20timings."
+             target="_blank" rel="noopener">WhatsApp ↗</a>
+
+          <a class="btn btn-outline"
+             href="https://www.google.com/maps/search/?api=1&query=Ramesh+Cricket+Academy+New+Kantharaj+Urs+Road+Mysuru"
+             target="_blank" rel="noopener">Open Maps ↗</a>
+        </div>
+      </div>
+
+      <form class="enquiry-card reveal" id="enquiryForm">
+        <h3>Enquire About Coaching</h3>
+        <p>Fill in your details and continue on WhatsApp.</p>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="playerName">Parent / player name *</label>
+            <input id="playerName" required maxlength="70" placeholder="Your name">
+          </div>
+
+          <div class="field">
+            <label for="playerAge">Player age</label>
+            <input id="playerAge" type="number" min="3" max="100" placeholder="Age">
+          </div>
+
+          <div class="field">
+            <label for="experience">Experience</label>
+            <select id="experience">
+              <option>Beginner</option>
+              <option>Some practice</option>
+              <option>Regular player</option>
+              <option>Competitive player</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="interest">Main interest</label>
+            <select id="interest">
+              <option>All-round cricket coaching</option>
+              <option>Batting</option>
+              <option>Bowling</option>
+              <option>Fielding</option>
+              <option>Fees and batch timings</option>
+              <option>Trial enquiry</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" maxlength="500" placeholder="Preferred timings or questions"></textarea>
+          </div>
+
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          Continue on WhatsApp ↗
         </button>
 
-    </div>
-
-
-    <div class="stats">
-
-
-        <div class="stat">
-
-            <strong>
-                Cricket
-            </strong>
-
-            <span>
-                Coaching
-            </span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>
-                Daily
-            </strong>
-
-            <span>
-                Training
-            </span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>
-                Mysuru
-            </strong>
-
-            <span>
-                Karnataka
-            </span>
-
-        </div>
-
+        <p class="form-note">
+          WhatsApp opens with a prepared message. Review it before sending.
+          This form does not store enquiries in a database.
+        </p>
+      </form>
 
     </div>
-
-
-</div>
-
+  </div>
 </section>
 
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section>
-
-<div class="container">
-
-
-    <h2 class="section-title">
-
-        Everything for your game.
-
-    </h2>
-
-
-    <p class="section-subtitle">
-
-        Training, practice and player development.
-
-    </p>
-
-
-    <div class="cards">
-
-
-        <div
-        class="card feature"
-        onclick="openModal('about')">
-
-
-            <div class="card-icon">
-
-                🏆
-
-            </div>
-
-
-            <h3>
-
-                Build your
-                <span>game.</span>
-
-            </h3>
-
-
-            <p>
-
-                Cricket coaching, practical training
-                and skill development for aspiring
-                players.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div
-        class="card"
-        onclick="openModal('programs')">
-
-
-            <div class="card-icon">
-
-                🎯
-
-            </div>
-
-
-            <h3>
-
-                Cricket Coaching
-
-            </h3>
-
-
-            <p>
-
-                Improve your cricket skills through
-                structured practical training.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div
-        class="card"
-        onclick="openModal('facility')">
-
-
-            <div class="card-icon">
-
-                🏟️
-
-            </div>
-
-
-            <h3>
-
-                Practice Facilities
-
-            </h3>
-
-
-            <p>
-
-                Practice environment for players
-                looking to improve their game.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div
-        class="card"
-        onclick="openModal('trial')">
-
-
-            <div class="card-icon">
-
-                ⚡
-
-            </div>
-
-
-            <h3>
-
-                Trial Sessions
-
-            </h3>
-
-
-            <p>
-
-                Enquire about trial sessions and
-                available coaching batches.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div
-        class="card"
-        onclick="openModal('gallery')">
-
-
-            <div class="card-icon">
-
-                📸
-
-            </div>
-
-
-            <h3>
-
-                Academy Gallery
-
-            </h3>
-
-
-            <p>
-
-                Explore the cricket ground,
-                training and academy activities.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div
-        class="card"
-        onclick="openModal('contact')">
-
-
-            <div class="card-icon">
-
-                📍
-
-            </div>
-
-
-            <h3>
-
-                Visit Academy
-
-            </h3>
-
-
-            <p>
-
-                Find the academy and contact
-                the team directly.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     GALLERY
-===================================================== -->
-
-<section>
-
-<div class="container">
-
-
-    <h2 class="section-title">
-
-        Train. Practice. Repeat.
-
-    </h2>
-
-
-    <p class="section-subtitle">
-
-        Explore the academy and its cricket
-        training environment.
-
-    </p>
-
-
-    <div class="gallery">
-
-
-        <div class="photo">
-
-            <span>
-                Cricket Practice Ground
-            </span>
-
-        </div>
-
-
-        <div class="photo">
-
-            <span>
-                Training Nets
-            </span>
-
-        </div>
-
-
-        <div class="photo">
-
-            <span>
-                Academy Training
-            </span>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ACADEMY EXPERIENCE
-===================================================== -->
-
-<section>
-
-<div class="container">
-
-
-    <h2 class="section-title">
-
-        Your academy deserves
-        a digital home.
-
-    </h2>
-
-
-    <div class="cards">
-
-
-        <div class="card">
-
-
-            <div class="card-icon">
-                🔎
-            </div>
-
-
-            <h3>
-
-                Be Discoverable
-
-            </h3>
-
-
-            <p>
-
-                Give parents and players one
-                professional place to learn about
-                the academy.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="card">
-
-
-            <div class="card-icon">
-                📲
-            </div>
-
-
-            <h3>
-
-                Get Enquiries
-
-            </h3>
-
-
-            <p>
-
-                Visitors can directly call or
-                WhatsApp the academy.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="card">
-
-
-            <div class="card-icon">
-                🖼️
-            </div>
-
-
-            <h3>
-
-                Show Facilities
-
-            </h3>
-
-
-            <p>
-
-                Display your ground, nets,
-                equipment, coaches and players.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="card">
-
-
-            <div class="card-icon">
-                🚀
-            </div>
-
-
-            <h3>
-
-                Promote Batches
-
-            </h3>
-
-
-            <p>
-
-                Publish age groups, timings,
-                programs and announcements.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+</main>
 
 <footer>
-
-    <strong>
+  <div class="container footer-row">
+    <a class="brand" href="#home">
+      <span class="brand-icon">🏏</span>
+      <span class="brand-name">
         Ramesh Cricket Academy
-    </strong>
+        <small>MYSURU · KARNATAKA</small>
+      </span>
+    </a>
 
-    <br><br>
-
-    Mysuru, Karnataka
-
-    <br><br>
-
-    Train • Improve • Compete
-
+    <p class="footer-copy">
+      © <span id="year"></span> Ramesh Cricket Academy.<br>
+      Built for the love of cricket.
+    </p>
+  </div>
 </footer>
 
-
-
-<!-- =====================================================
-     MOBILE ACTION BAR
-===================================================== -->
-
-<div class="bottom-bar">
-
-
-    <button
-    onclick="openModal('trial')">
-
-        🏏 Trial
-
-    </button>
-
-
-    <button
-    onclick="callAcademy()">
-
-        📞 Call
-
-    </button>
-
-
-    <button
-    onclick="openModal('contact')">
-
-        📍 Location
-
-    </button>
-
-
+<!-- MOBILE ACTION BAR -->
+<div class="mobile-bar">
+  <a class="btn btn-primary" href="tel:+918511338530">☎ Call Academy</a>
+  <a class="btn btn-outline"
+     href="https://wa.me/918511338530?text=Hello%20Ramesh%20Cricket%20Academy%2C%20I%20would%20like%20to%20enquire%20about%20coaching."
+     target="_blank" rel="noopener">WhatsApp ↗</a>
 </div>
 
-
-
-<!-- =====================================================
-     MODAL
-===================================================== -->
-
-<div
-id="modal"
-class="modal"
-onclick="closeOutside(event)">
-
-
-<div class="modal-box">
-
-
-    <button
-    class="close"
-    onclick="closeModal()">
-
-        ✕
-
-    </button>
-
-
-    <div id="modalContent"></div>
-
-
+<!-- ANIMATED POPUP -->
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close popup">×</button>
+    <div class="modal-icon" id="modalIcon">🏏</div>
+    <h3 id="modalTitle">Training Details</h3>
+    <p id="modalText"></p>
+    <div class="modal-actions">
+      <a class="btn btn-primary" id="modalWhatsApp"
+         href="https://wa.me/918511338530"
+         target="_blank" rel="noopener">Ask on WhatsApp ↗</a>
+      <a class="btn btn-outline" href="tel:+918511338530">Call Academy</a>
+    </div>
+  </div>
 </div>
 
+<!-- GALLERY LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+  <img id="lightboxImage" src="" alt="Expanded cricket gallery image">
 </div>
-
-
 
 <script>
-
-/* =====================================================
-   ACADEMY CONTACT
-===================================================== */
-
-const phone =
-"08511338530";
-
-
-/* =====================================================
-   MODAL CONTENT
-===================================================== */
-
-const content = {
-
-
-about:`
-
-<div class="small-title">
-ABOUT THE ACADEMY
-</div>
-
-<h2>
-Ramesh Cricket Academy
-</h2>
-
-<p>
-
-Ramesh Cricket Academy is a cricket
-academy and cricket club in Mysuru,
-serving aspiring players through
-cricket training and skill development.
-
-</p>
-
-<ul>
-
-<li>
-Cricket coaching
-</li>
-
-<li>
-Skill development
-</li>
-
-<li>
-Practical cricket training
-</li>
-
-<li>
-Youth development
-</li>
-
-<li>
-Trial enquiries
-</li>
-
-</ul>
-
-`,
-
-
-
-programs:`
-
-<div class="small-title">
-TRAINING
-</div>
-
-<h2>
-Develop Your Game
-</h2>
-
-<p>
-
-Improve your cricket skills through
-focused practice and practical training.
-
-</p>
-
-<ul>
-
-<li>
-Cricket skill development
-</li>
-
-<li>
-Practical training
-</li>
-
-<li>
-Youth cricket development
-</li>
-
-<li>
-Trial sessions
-</li>
-
-<li>
-Coaching enquiries
-</li>
-
-</ul>
-
-`,
-
-
-
-facility:`
-
-<div class="small-title">
-FACILITIES
-</div>
-
-<h2>
-Practice Environment
-</h2>
-
-<p>
-
-The academy provides a cricket practice
-environment where players can work on
-their skills and improve their game.
-
-</p>
-
-<ul>
-
-<li>
-Cricket practice area
-</li>
-
-<li>
-Practice nets
-</li>
-
-<li>
-Training environment
-</li>
-
-</ul>
-
-`,
-
-
-
-gallery:`
-
-<div class="small-title">
-GALLERY
-</div>
-
-<h2>
-Life at the Academy
-</h2>
-
-<p>
-
-Explore the cricket ground, practice
-sessions and academy activities.
-
-</p>
-
-<ul>
-
-<li>
-Cricket ground
-</li>
-
-<li>
-Practice nets
-</li>
-
-<li>
-Training sessions
-</li>
-
-<li>
-Players
-</li>
-
-<li>
-Academy activities
-</li>
-
-</ul>
-
-`,
-
-
-
-trial:`
-
-<div class="small-title">
-NEW PLAYER?
-</div>
-
-<h2>
-Book a Trial
-</h2>
-
-<p>
-
-Want to know about trial sessions,
-batch timings or coaching?
-
-Contact Ramesh Cricket Academy.
-
-</p>
-
-
-<div class="contact-buttons">
-
-
-<a href="tel:08511338530">
-
-📞 Call Academy
-
-</a>
-
-
-<a
-href="https://wa.me/918511338530"
-target="_blank">
-
-💬 WhatsApp Academy
-
-</a>
-
-
-</div>
-
-`,
-
-
-
-contact:`
-
-<div class="small-title">
-CONTACT
-</div>
-
-<h2>
-Visit Ramesh Cricket Academy
-</h2>
-
-
-<p>
-
-<strong>
-Address:
-</strong>
-
-<br>
-
-New Kantharaj Urs Road,
-Jayanagar,
-Kuvempu Nagara,
-Mysuru,
-Karnataka 570014.
-
-</p>
-
-
-<p style="margin-top:15px">
-
-<strong>
-Opening Hours:
-</strong>
-
-<br>
-
-Daily:
-5:30 AM – 9:30 PM
-
-</p>
-
-
-<div class="contact-buttons">
-
-
-<a href="tel:08511338530">
-
-📞 08511338530
-
-</a>
-
-
-<a
-href="https://wa.me/918511338530"
-target="_blank">
-
-💬 WhatsApp
-
-</a>
-
-
-<a
-href="https://www.google.com/maps/search/?api=1&query=Ramesh+Cricket+Academy+Mysuru"
-target="_blank">
-
-📍 Open Google Maps
-
-</a>
-
-
-</div>
-
-`
-
+/* HEADER */
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 25);
+}, { passive: true });
+
+/* MOBILE MENU */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* SCROLL REVEAL */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+/* FAQ ACCORDION */
+document.querySelectorAll(".faq button").forEach(button => {
+  button.addEventListener("click", () => {
+    button.closest(".faq").classList.toggle("open");
+  });
+});
+
+/* POPUP CONTENT */
+const popupData = {
+  trial: [
+    "🏏",
+    "Ask About a Trial Session",
+    "Contact the academy to confirm whether a trial or introductory session is currently available, and ask about suitable age groups and timings."
+  ],
+  batting: [
+    "🏏",
+    "Batting Development",
+    "Potential focus areas include grip, stance, balance, footwork, timing, shot selection and reading line and length. Ask which batting sessions are available."
+  ],
+  bowling: [
+    "🎯",
+    "Bowling Skills",
+    "Potential focus areas include run-up rhythm, release point, accuracy, control and pace or spin fundamentals. Ask about coaching for your bowling style."
+  ],
+  fielding: [
+    "🧤",
+    "Fielding & Catching",
+    "Potential focus areas include catching technique, ground fielding, throwing accuracy, footwork and quick reactions."
+  ],
+  beginner: [
+    "🌱",
+    "Beginner Foundations",
+    "Ask about learning the rules, safe equipment use, basic batting and bowling technique, and step-by-step skill practice."
+  ],
+  match: [
+    "📋",
+    "Match Awareness",
+    "Training may include running between wickets, communication, field placements and game scenarios. Ask the academy about current arrangements."
+  ],
+  fitness: [
+    "⚡",
+    "Agility & Fitness",
+    "Cricket-related conditioning can include warm-ups, coordination, balance, movement and agility. Ask what is included in current sessions."
+  ],
+  timings: [
+    "◷",
+    "Batches & Timings",
+    "A public listing shows approximate daily operating hours of 5:30 AM to 9:30 PM. Actual coaching batch times, fees, age groups and coach availability must be confirmed directly."
+  ],
+  question: [
+    "✳",
+    "Ask the Academy",
+    "Contact the academy for current fees, available batches, age groups, trial options, equipment requirements and coach details."
+  ]
 };
 
+const modalBackdrop = document.getElementById("modalBackdrop");
 
-/* =====================================================
-   OPEN MODAL
-===================================================== */
+function openModal(key) {
+  const data = popupData[key] || popupData.question;
 
-function openModal(type){
+  document.getElementById("modalIcon").textContent = data[0];
+  document.getElementById("modalTitle").textContent = data[1];
+  document.getElementById("modalText").textContent = data[2];
 
-    document
-    .getElementById("modalContent")
-    .innerHTML =
-    content[type];
+  document.getElementById("modalWhatsApp").href =
+    "https://wa.me/918511338530?text=" +
+    encodeURIComponent(
+      "Hello Ramesh Cricket Academy, please share current details about " +
+      data[1] + "."
+    );
 
-
-    document
-    .getElementById("modal")
-    .classList
-    .add("active");
-
-
-    document.body.style.overflow =
-    "hidden";
-
+  modalBackdrop.classList.add("show");
+  document.body.style.overflow = "hidden";
 }
 
-
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
-
-function closeModal(){
-
-    document
-    .getElementById("modal")
-    .classList
-    .remove("active");
-
-
-    document.body.style.overflow =
-    "auto";
-
+function closeModal() {
+  modalBackdrop.classList.remove("show");
+  document.body.style.overflow = "";
 }
 
-
-/* =====================================================
-   CLOSE OUTSIDE
-===================================================== */
-
-function closeOutside(event){
-
-    if(
-        event.target.id === "modal"
-    ){
-
-        closeModal();
-
-    }
-
-}
-
-
-/* =====================================================
-   CALL
-===================================================== */
-
-function callAcademy(){
-
-    window.location.href =
-    "tel:" + phone;
-
-}
-
-
-/* =====================================================
-   ESCAPE
-===================================================== */
-
-document.addEventListener(
-"keydown",
-function(event){
-
-    if(
-        event.key === "Escape"
-    ){
-
-        closeModal();
-
-    }
-
+document.querySelectorAll("[data-modal]").forEach(button => {
+  button.addEventListener("click", () => {
+    openModal(button.dataset.modal);
+  });
 });
 
+document.getElementById("modalClose").addEventListener("click", closeModal);
 
-/* =====================================================
-   SCROLL CARD ANIMATION
-===================================================== */
-
-const cards =
-document.querySelectorAll(".card");
-
-
-const observer =
-new IntersectionObserver(
-
-    entries => {
-
-        entries.forEach(
-        entry => {
-
-            if(
-                entry.isIntersecting
-            ){
-
-                entry.target
-                .classList
-                .add("show");
-
-                observer
-                .unobserve(
-                    entry.target
-                );
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold:.12
-    }
-
-);
-
-
-cards.forEach(
-card => {
-
-    observer.observe(card);
-
+modalBackdrop.addEventListener("click", event => {
+  if (event.target === modalBackdrop) closeModal();
 });
 
+/* GALLERY LIGHTBOX */
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
 
+document.querySelectorAll("[data-lightbox]").forEach(image => {
+  image.addEventListener("click", () => {
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.classList.add("show");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("show");
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+}
+
+document.getElementById("lightboxClose")
+  .addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeModal();
+    closeLightbox();
+  }
+});
+
+/* WHATSAPP ENQUIRY FORM */
+document.getElementById("enquiryForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const name = document.getElementById("playerName").value.trim();
+  const age = document.getElementById("playerAge").value.trim();
+  const experience = document.getElementById("experience").value;
+  const interest = document.getElementById("interest").value;
+  const message = document.getElementById("message").value.trim();
+
+  const whatsappMessage =
+`Hello Ramesh Cricket Academy, I would like to enquire about coaching.
+
+Name: ${name}
+Player age: ${age || "Not specified"}
+Experience: ${experience}
+Interest: ${interest}
+Message: ${message || "No additional message"}`;
+
+  window.open(
+    "https://wa.me/918511338530?text=" +
+    encodeURIComponent(whatsappMessage),
+    "_blank"
+  );
+});
+
+/* CURRENT YEAR */
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-
 </body>
-</html>
+   </html>
